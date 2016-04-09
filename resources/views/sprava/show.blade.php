@@ -50,7 +50,11 @@
                     <div class="form-group">
                         <label class="col-md-2 control-label">Dieťa:</label>
                         <div class="col-md-10">
-                            <p class="form-control-static">{{ $sprava->dieta->meno.' '.$sprava->dieta->priezvisko }}</p>
+                            <p class="form-control-static">
+                                <a href="{{action('DietaController@show', [$sprava->id_dieta])}}">
+                                    {{ $sprava->dieta->meno.' '.$sprava->dieta->priezvisko }}
+                                </a>
+                            </p>
                         </div>
                     </div>
 
@@ -58,7 +62,11 @@
                     <div class="form-group">
                         <label class="col-md-2 control-label">Rodič:</label>
                         <div class="col-md-10">
-                            <p class="form-control-static">{{ $sprava->rodic->meno.' '.$sprava->rodic->priezvisko }}</p>
+                            <p class="form-control-static">
+                                <a href="{{action('RodicController@show', [$sprava->id_rodic])}}">
+                                    {{ $sprava->rodic->meno.' '.$sprava->rodic->priezvisko }}
+                                </a>
+                            </p>
                         </div>
                     </div>
 
@@ -85,7 +93,11 @@
                     <div class="form-group">
                         <label class="col-md-2 control-label">Prekladateľ:</label>
                         <div class="col-md-10">
-                            <p class="form-control-static">{{ $sprava->prekladatel->meno.' '.$sprava->prekladatel->priezvisko }}</p>
+                            <p class="form-control-static">
+                                <a href="{{action('PrekladatelController@show', [$sprava->id_prekladatel])}}">
+                                    {{ $sprava->prekladatel->meno.' '.$sprava->prekladatel->priezvisko }}
+                                </a>
+                            </p>
                         </div>
                     </div>
 
