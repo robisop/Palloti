@@ -24,15 +24,38 @@
                         <div class="full-height-scroll">
                             <div class="table-responsive">
                                 <table class="table table-striped table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Meno a priezvisko</th>
+                                            <th>Dátum narodenia</th>
+                                            <th>Krajina</th>
+                                            <th>Misia</th>
+                                            <th>Stav</th>
+                                            <th>Rodičia</th>
+                                            <th>Akcie</th>
+                                        </tr>
+                                    </thead>
                                     <tbody>
                                     @forelse($deti as $dieta)
                                         <tr>
-                                            <td class="client-avatar"><img alt="image" src="{{ asset('img/a2.jpg') }}"> </td>
+                                            <td> {{ $dieta->id }}</td>
                                             <td><a href="{{ route('dieta.show', $dieta->id) }}" class="client-link">{{ $dieta->meno.' '.$dieta->priezvisko  }}</a></td>
-                                            <td> {{ $dieta->pohlavie }}</td>
-                                            <td class="contact-type"><i class="fa fa-envelope"> </i></td>
-                                            <td> {{ $dieta->datum_narodenia }}</td>
-                                            <td class="client-status"><span class="label label-primary">{{ $dieta->rok_narodenia }}</span></td>
+                                            <td>
+                                                @if(isset($dieta->datum_narodenia))
+                                                    {{ $dieta->datum_narodenia->format('d.m.Y') }}
+                                                @else
+                                                    {{ $dieta->rok_narodenia }}
+                                                @endif
+                                            </td>
+                                            <td> {{ $dieta->misia->krajina->nazov }}</td>
+                                            <td> {{ $dieta->misia->nazov }}</td>
+                                            <td class="client-status"><span class="label label-danger">{{ $dieta->stav->nazov }}</span></td>
+                                            <td></td>
+                                            <td>
+                                                <a href="{{ route('dieta.show', $dieta->id) }}" class="btn btn-sm btn-success">detail</a>
+                                                <a href="{{ route('dieta.edit', $dieta->id) }}" class="btn btn-sm btn-primary">upraviť</a>
+                                            </td>
                                         </tr>
                                     @empty
                                         <tr>

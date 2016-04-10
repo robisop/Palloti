@@ -30,7 +30,7 @@ Rodicia
                                         <th>VS</th>
                                         <th>AS</th>
                                         <th>Stav</th>
-                                        <th>akcie</th>
+                                        <th>Akcie</th>
                                     </tr>
                                     </thead>
                                     <tbody>

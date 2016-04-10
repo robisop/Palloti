@@ -14,6 +14,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 use Laracasts\Flash\Flash;
 
 class DietaController extends Controller
@@ -35,7 +36,7 @@ class DietaController extends Controller
      */
     public function index()
     {
-        $deti = Dieta::all();
+        $deti = Dieta::with('misia.krajina', 'stav')->get();
         return view('dieta.index', compact('deti'));
     }
 
