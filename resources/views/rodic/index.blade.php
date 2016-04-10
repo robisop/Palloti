@@ -24,15 +24,32 @@ Rodicia
                         <div class="full-height-scroll">
                             <div class="table-responsive">
                                 <table class="table table-striped table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th>Meno a priezvisko</th>
+                                        <th>VS</th>
+                                        <th>AS</th>
+                                        <th>Stav</th>
+                                        <th>akcie</th>
+                                    </tr>
+                                    </thead>
                                     <tbody>
                                     @forelse($rodicia as $rodic)
                                         <tr>
-                                            <td class="client-avatar"><img alt="image" src="{{ asset('img/a2.jpg') }}"> </td>
-                                            <td><a href="{{ route('rodic.show', $rodic->id) }}" class="client-link">{{ $rodic->meno }}</a></td>
-                                            <td> {{ $rodic->nazov_spolocnosti }}</td>
-                                            <td class="contact-type"><i class="fa fa-envelope"> </i></td>
-                                            <td> {{ $rodic->email }}</td>
-                                            <td class="client-status"><span class="label label-primary">Active</span></td>
+                                            <td>
+                                                @if($rodic->je_institucia)
+                                                    <a href="{{ route('rodic.show', $rodic->id) }}" class="client-link">{{ $rodic->nazov_spolocnosti }}</a>
+                                                @else
+                                                    <a href="{{ route('rodic.show', $rodic->id) }}" class="client-link">{{ $rodic->meno.' '.$rodic->priezvisko }}</a>
+                                                @endif
+                                            </td>
+                                            <td> {{ $rodic->vs }}</td>
+                                            <td> {{ $rodic->id }}</td>
+                                            <td class="client-status"><span class="label label-danger">{{ $rodic->stav->nazov }}</span></td>
+                                            <td>
+                                                <a href="{{ route('rodic.show', $rodic->id) }}" class="btn btn-sm btn-success">detail</a>
+                                                <a href="{{ route('rodic.edit', $rodic->id) }}" class="btn btn-sm btn-primary">upraviť</a>
+                                            </td>
                                         </tr>
                                     @empty
                                         <tr>

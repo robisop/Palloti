@@ -39,7 +39,7 @@ class RodicController extends Controller
      */
     public function index()
     {
-        $rodicia = Rodic::all();
+        $rodicia = Rodic::with('stav')->get();
         return view('rodic.index', compact('rodicia'));
     }
 
