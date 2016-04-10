@@ -11,12 +11,15 @@
                 <div class="ibox-content">
                     <h2>Požiadavky</h2>
 
-                    <div class="input-group">
+                    {{--<div class="input-group">
                         <input type="text" placeholder="Hľadať požiadavku" class="input form-control">
                                 <span class="input-group-btn">
                                         <button type="button" class="btn btn btn-primary"> <i class="fa fa-search"></i> Hľadať</button>
                                 </span>
-                    </div>
+                    </div>--}}
+
+                    <a href="{{ route('poziadavka.create') }}" class="btn btn-warning">Pridať novú požiadavku</a>
+
                     <div class="clients-list">
                         <div class="full-height-scroll">
                             <div class="table-responsive">

@@ -1,7 +1,7 @@
 @extends('master')
 
 @section('title')
-    List
+    Správa
 @endsection
 
 @section('content')
@@ -10,10 +10,10 @@
             <div class="ibox">
                 <div class="ibox-content">
 
-                    <h2>List - {{ $sprava->id }}</h2>
+                    <h2>Správa - {{ $sprava->id }}</h2>
 
                     <p>
-                        Editácia listu
+                        Editácia správy
                     </p>
 
                     @include('errors.validation')

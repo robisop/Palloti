@@ -55,55 +55,31 @@
                     </li>
                     <li class="active">
                         <a href="{{ route('index') }}"><i class="fa fa-th-large"></i> <span
-                                    class="nav-label">Main view</span></a>
+                                    class="nav-label">Prehľad</span></a>
                     </li>
                     <li>
-                        <a href="{{ route('rodic.index') }}"><i class="fa fa-th-large"></i> <span
-                                    class="nav-label">Rodič zoznam</span> </a>
+                        <a href="{{ route('rodic.index') }}"><i class="fa fa-user"></i> <span
+                                    class="nav-label">Rodičia</span> </a>
                     </li>
                     <li>
-                        <a href="{{ route('rodic.create') }}"><i class="fa fa-th-large"></i> <span
-                                    class="nav-label">Rodič form</span> </a>
+                        <a href="{{ route('dieta.index') }}"><i class="fa fa-child"></i> <span
+                                    class="nav-label">Deti</span> </a>
                     </li>
                     <li>
-                        <a href="{{ route('dieta.index') }}"><i class="fa fa-th-large"></i> <span
-                                    class="nav-label">Dieťa zoznam</span> </a>
+                        <a href="{{ route('prekladatel.index') }}"><i class="fa fa-cube"></i> <span
+                                    class="nav-label">Prekladatelia</span> </a>
                     </li>
                     <li>
-                        <a href="{{ route('dieta.create') }}"><i class="fa fa-th-large"></i> <span
-                                    class="nav-label">Dieťa form</span> </a>
+                        <a href="{{ route('sprava.index') }}"><i class="fa fa-envelope"></i> <span
+                                    class="nav-label">Správy</span> </a>
                     </li>
                     <li>
-                        <a href="{{ route('prekladatel.index') }}"><i class="fa fa-th-large"></i> <span
-                                    class="nav-label">Prekladateľ zoznam</span> </a>
+                        <a href="{{ route('projekt.index') }}"><i class="fa fa-car"></i> <span
+                                    class="nav-label">Projekty</span> </a>
                     </li>
                     <li>
-                        <a href="{{ route('prekladatel.create') }}"><i class="fa fa-th-large"></i> <span
-                                    class="nav-label">Prekladateľ form</span> </a>
-                    </li>
-                    <li>
-                        <a href="{{ route('sprava.index') }}"><i class="fa fa-th-large"></i> <span
-                                    class="nav-label">Sprava zoznam</span> </a>
-                    </li>
-                    <li>
-                        <a href="{{ route('sprava.create') }}"><i class="fa fa-th-large"></i> <span
-                                    class="nav-label">Sprava form</span> </a>
-                    </li>
-                    <li>
-                        <a href="{{ route('projekt.index') }}"><i class="fa fa-th-large"></i> <span
-                                    class="nav-label">Projekt zoznam</span> </a>
-                    </li>
-                    <li>
-                        <a href="{{ route('projekt.create') }}"><i class="fa fa-th-large"></i> <span
-                                    class="nav-label">Projekt form</span> </a>
-                    </li>
-                    <li>
-                        <a href="{{ route('poziadavka.index') }}"><i class="fa fa-th-large"></i> <span
-                                    class="nav-label">Požiadavka zoznam</span> </a>
-                    </li>
-                    <li>
-                        <a href="{{ route('poziadavka.create') }}"><i class="fa fa-th-large"></i> <span
-                                    class="nav-label">Požiadavka form</span> </a>
+                        <a href="{{ route('poziadavka.index') }}"><i class="fa fa-camera"></i> <span
+                                    class="nav-label">Požiadavky</span> </a>
                     </li>
                 </ul>
 
