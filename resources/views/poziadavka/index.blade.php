@@ -1,3 +1,7 @@
+<?php
+//DB::listen(function($query){ var_dump($query->sql); });
+?>
+
 @extends('master')
 
 @section('title')
@@ -24,19 +28,28 @@
                         <div class="full-height-scroll">
                             <div class="table-responsive">
                                 <table class="table table-striped table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th>Názov</th>
+                                        <th>Typ</th>
+                                        <th>Stav</th>
+                                        <th>Akcie</th>
+                                    </tr>
+                                    </thead>
                                     <tbody>
                                     @forelse($poziadavky as $poziadavka)
                                         <tr>
-                                            <td class="client-avatar"><img alt="image" src="{{ asset('img/a2.jpg') }}"> </td>
                                             <td><a href="{{ route('poziadavka.show', $poziadavka->id) }}" class="client-link">{{ $poziadavka->nazov }}</a></td>
-                                            <td> {{ $poziadavka->popis }}</td>
-                                            <td class="contact-type"><i class="fa fa-envelope"> </i></td>
-                                            <td> {{ $poziadavka->odpoved }}</td>
-                                            <td class="client-status"><span class="label label-primary">Active</span></td>
+                                            <td> {{ $poziadavka->typ->nazov }}</td>
+                                            <td class="client-status"><span class="label label-danger">{{ $poziadavka->stav->nazov }}</span></td>
+                                            <td>
+                                                <a href="{{ route('poziadavka.show', $poziadavka->id) }}" class="btn btn-sm btn-success">detail</a>
+                                                <a href="{{ route('poziadavka.edit', $poziadavka->id) }}" class="btn btn-sm btn-primary">upraviť</a>
+                                            </td>
                                         </tr>
                                     @empty
                                         <tr>
-                                            <td>no records</td>
+                                            <td colspan="0">Žiaden záznam</td>
                                         </tr>
                                     @endforelse
 

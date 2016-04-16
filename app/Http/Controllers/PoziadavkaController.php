@@ -32,7 +32,7 @@ class PoziadavkaController extends Controller
      */
     public function index()
     {
-        $poziadavky = Poziadavka::all();
+        $poziadavky = Poziadavka::with('typ', 'stav')->get();
         return view('poziadavka.index', compact('poziadavky'));
     }
 
