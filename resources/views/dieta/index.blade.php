@@ -63,7 +63,7 @@
                                         </tr>
                                     @empty
                                         <tr>
-                                            <td>no records</td>
+                                            <td colspan="0">Žiaden záznam</td>
                                         </tr>
                                     @endforelse
 

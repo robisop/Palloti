@@ -1,3 +1,7 @@
+<?php
+//DB::listen(function($query){ var_dump($query->sql); });
+?>
+
 @extends('master')
 
 @section('title')
@@ -24,19 +28,30 @@
                         <div class="full-height-scroll">
                             <div class="table-responsive">
                                 <table class="table table-striped table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Názov</th>
+                                            <th>Konečná suma</th>
+                                            <th>Vyzbieraná suma</th>
+                                            <th>Stav</th>
+                                            <th>Akcie</th>
+                                        </tr>
+                                    </thead>
                                     <tbody>
                                     @forelse($projekty as $projekt)
                                         <tr>
-                                            <td class="client-avatar"><img alt="image" src="{{ asset('img/a2.jpg') }}"> </td>
                                             <td><a href="{{ route('projekt.show', $projekt->id) }}" class="client-link">{{ $projekt->nazov }}</a></td>
-                                            <td> {{ $projekt->popis }}</td>
-                                            <td class="contact-type"><i class="fa fa-envelope"> </i></td>
-                                            <td> {{ $projekt->poznamka }}</td>
-                                            <td class="client-status"><span class="label label-primary">Active</span></td>
+                                            <td> {{ $projekt->konecna_suma }}</td>
+                                            <td></td>
+                                            <td class="client-status"><span class="label label-primary">{{ $projekt->stav->nazov }}</span></td>
+                                            <td>
+                                                <a href="{{ route('projekt.show', $projekt->id) }}" class="btn btn-sm btn-success">detail</a>
+                                                <a href="{{ route('projekt.edit', $projekt->id) }}" class="btn btn-sm btn-primary">upraviť</a>
+                                            </td>
                                         </tr>
                                     @empty
                                         <tr>
-                                            <td>no records</td>
+                                            <td colspan="0">Žiaden záznam</td>
                                         </tr>
                                     @endforelse
 

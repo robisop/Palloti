@@ -31,7 +31,7 @@ class ProjektController extends Controller
      */
     public function index()
     {
-        $projekty = Projekt::all();
+        $projekty = Projekt::with('stav')->get();
         return view('projekt.index', compact('projekty'));
     }
 
