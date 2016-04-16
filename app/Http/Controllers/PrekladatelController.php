@@ -34,7 +34,7 @@ class PrekladatelController extends Controller
      */
     public function index()
     {
-        $prekladatelia = Prekladatel::all();
+        $prekladatelia = Prekladatel::with('jazyk','stav')->get();
         return view('prekladatel.index', compact('prekladatelia'));
     }
 

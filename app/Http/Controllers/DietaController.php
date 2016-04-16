@@ -36,7 +36,7 @@ class DietaController extends Controller
      */
     public function index()
     {
-        $deti = Dieta::with('misia.krajina', 'stav')->get();
+        $deti = Dieta::with('misia.krajina', 'stav', 'rodic')->get();
         return view('dieta.index', compact('deti'));
     }
 

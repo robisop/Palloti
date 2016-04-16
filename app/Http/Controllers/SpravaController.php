@@ -36,7 +36,7 @@ class SpravaController extends Controller
      */
     public function index()
     {
-        $spravy = Sprava::all();
+        $spravy = Sprava::with('typ','dieta', 'rodic', 'prekladatel', 'stav')->get();
         return view('sprava.index', compact('spravy'));
     }
 

@@ -1,3 +1,8 @@
+<?php
+//DB::listen(function($query){ var_dump($query->sql); });
+?>
+
+
 @extends('master')
 
 @section('title')
@@ -24,15 +29,24 @@
                         <div class="full-height-scroll">
                             <div class="table-responsive">
                                 <table class="table table-striped table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Meno a priezvisko</th>
+                                            <th>Jazyky</th>
+                                            <th>Stav</th>
+                                            <th>Akcie</th>
+                                        </tr>
+                                    </thead>
                                     <tbody>
                                     @forelse($prekladatelia as $prekladatel)
                                         <tr>
-                                            <td class="client-avatar"><img alt="image" src="{{ asset('img/a2.jpg') }}"> </td>
                                             <td><a href="{{ route('prekladatel.show', $prekladatel->id) }}" class="client-link">{{ $prekladatel->meno.' '.$prekladatel->priezvisko }}</a></td>
-                                            <td> {{ $prekladatel->telefon }}</td>
-                                            <td class="contact-type"><i class="fa fa-envelope"> </i></td>
-                                            <td> {{ $prekladatel->email }}</td>
-                                            <td class="client-status"><span class="label label-primary">Active</span></td>
+                                            <td>{{ implode(', ', $prekladatel->jazyk->pluck('nazov')->toArray()) }}</td>
+                                            <td class="client-status"><span class="label label-danger">{{ $prekladatel->stav->nazov }}</span></td>
+                                            <td>
+                                                <a href="{{ route('prekladatel.show', $prekladatel->id) }}" class="btn btn-sm btn-success">detail</a>
+                                                <a href="{{ route('prekladatel.edit', $prekladatel->id) }}" class="btn btn-sm btn-primary">upraviť</a>
+                                            </td>
                                         </tr>
                                     @empty
                                         <tr>

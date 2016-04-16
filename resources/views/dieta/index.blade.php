@@ -1,3 +1,7 @@
+<?php
+//DB::listen(function($query){ var_dump($query->sql); });
+?>
+
 @extends('master')
 
 @section('title')
@@ -51,7 +55,7 @@
                                             <td> {{ $dieta->misia->krajina->nazov }}</td>
                                             <td> {{ $dieta->misia->nazov }}</td>
                                             <td class="client-status"><span class="label label-danger">{{ $dieta->stav->nazov }}</span></td>
-                                            <td></td>
+                                            <td>{{ implode(', ', $dieta->rodic->pluck('vs')->toArray()) }}</td>
                                             <td>
                                                 <a href="{{ route('dieta.show', $dieta->id) }}" class="btn btn-sm btn-success">detail</a>
                                                 <a href="{{ route('dieta.edit', $dieta->id) }}" class="btn btn-sm btn-primary">upraviť</a>
