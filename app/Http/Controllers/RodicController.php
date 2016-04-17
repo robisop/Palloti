@@ -35,12 +35,15 @@ class RodicController extends Controller
     /**
      * Display a listing of the resource.
      *
+     * @param Request $request
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $rodicia = Rodic::with('stav')->get();
-        return view('rodic.index', compact('rodicia'));
+        $rodicStavList = RodicStav::all('id', 'nazov');
+        $filter = $request;
+        return view('rodic.index', compact('rodicia', 'rodicStavList', 'filter'));
     }
 
     /**

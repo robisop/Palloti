@@ -18,7 +18,89 @@ Rodicia
                                 </span>
                     </div>--}}
 
-                    <a href="{{ route('rodic.create') }}" class="btn btn-warning">Pridať nového rodiča</a>
+                    <div>
+                        <a href="{{ route('rodic.create') }}" class="btn btn-warning">Pridať nového rodiča</a>
+                    </div>
+
+                    <br>
+
+                    <div class="well">
+                        {!! Form::open(['route' => ['rodic.index'], 'method' => 'get', 'class' => 'form-horizontal']) !!}
+                        <div class="row">
+                            <div class="col-md-6">
+
+                                <!-- meno Form Input -->
+                                <div class="form-group">
+                                    {!! Form::label('meno','Meno/Priezvisko:', ['class' => 'col-md-4 control-label']) !!}
+                                    <div class="col-md-8">
+                                        {!! Form::text('meno', $filter->meno, ['class' => 'form-control']) !!}
+                                        @if($errors->has('meno'))
+                                            <span class="help-block m-b-none">{{ $errors->first('meno') }}</span>
+                                        @endif
+                                    </div>
+                                </div>
+
+                                <!-- id_rodic_stav Form Input -->
+                                <div class="form-group">
+                                    {!! Form::label('id_rodic_stav','Stav:', ['class' => 'col-md-4 control-label']) !!}
+                                    <div class="col-md-8">
+                                        <select name="id_rodic_stav" class="form-control select2">
+                                            <option value=""></option>
+                                            @foreach($rodicStavList as $item)
+                                                @if($filter->id_rodic_stav == $item->id)
+                                                    <option value="{{$item->id}}" selected="selected">{{$item->nazov}}</option>
+                                                @else
+                                                    <option value="{{$item->id}}">{{$item->nazov}}</option>
+                                                @endif
+                                            @endforeach
+                                        </select>
+                                        @if($errors->has('id_rodic_stav'))
+                                            <span class="help-block m-b-none">{{ $errors->first('id_rodic_stav') }}</span>
+                                        @endif
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-6">
+
+                                <!-- vs Form Input -->
+                                <div class="form-group">
+                                    {!! Form::label('vs','VS:', ['class' => 'col-md-4 control-label']) !!}
+                                    <div class="col-md-8">
+                                        {!! Form::text('vs', $filter->vs, ['class' => 'form-control']) !!}
+                                        @if($errors->has('vs'))
+                                            <span class="help-block m-b-none">{{ $errors->first('vs') }}</span>
+                                        @endif
+                                    </div>
+                                </div>
+
+                                <!-- as Form Input -->
+                                <div class="form-group">
+                                    {!! Form::label('as','AS:', ['class' => 'col-md-4 control-label']) !!}
+                                    <div class="col-md-8">
+                                        {!! Form::text('as', $filter->as, ['class' => 'form-control']) !!}
+                                        @if($errors->has('as'))
+                                            <span class="help-block m-b-none">{{ $errors->first('as') }}</span>
+                                        @endif
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-offset-6 col-md-6">
+                                <!-- submit Form Input -->
+                                <div class="form-group">
+                                    <div class="col-md-offset-4 col-md-8">
+                                        {!! Form::submit('Hľadať', ['class' => 'btn btn-primary']) !!}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {!! Form::close() !!}
+                    </div>
 
                     <div class="clients-list">
                         <div class="full-height-scroll">
