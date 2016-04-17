@@ -16,14 +16,84 @@
                 <div class="ibox-content">
                     <h2>Prekladatelia</h2>
 
-                    {{--<div class="input-group">
-                        <input type="text" placeholder="Hľadať prekladateľa" class="input form-control">
-                                <span class="input-group-btn">
-                                        <button type="button" class="btn btn btn-primary"> <i class="fa fa-search"></i> Hľadať</button>
-                                </span>
-                    </div>--}}
+                    <div>
+                        <a href="{{ route('prekladatel.create') }}" class="btn btn-warning">Pridať nového prekladateľa</a>
+                    </div>
 
-                    <a href="{{ route('prekladatel.create') }}" class="btn btn-warning">Pridať nového prekladateľa</a>
+                    <br>
+
+                    <div class="well">
+                        {!! Form::open(['route' => ['prekladatel.index'], 'method' => 'get', 'class' => 'form-horizontal']) !!}
+                        <div class="row">
+                            <div class="col-md-6">
+
+                                <!-- meno Form Input -->
+                                <div class="form-group">
+                                    {!! Form::label('meno','Meno/Priezvisko:', ['class' => 'col-md-4 control-label']) !!}
+                                    <div class="col-md-8">
+                                        {!! Form::text('meno', $filter->meno, ['class' => 'form-control']) !!}
+                                        @if($errors->has('meno'))
+                                            <span class="help-block m-b-none">{{ $errors->first('meno') }}</span>
+                                        @endif
+                                    </div>
+                                </div>
+
+                                <!-- id_prekladatel_stav Form Input -->
+                                <div class="form-group">
+                                    {!! Form::label('id_prekladatel_stav','Stav:', ['class' => 'col-md-4 control-label']) !!}
+                                    <div class="col-md-8">
+                                        <select name="id_prekladatel_stav" class="form-control select2">
+                                            <option value=""></option>
+                                            @foreach($stavList as $item)
+                                                @if($filter->id_prekladatel_stav == $item->id)
+                                                    <option value="{{$item->id}}" selected="selected">{{$item->nazov}}</option>
+                                                @else
+                                                    <option value="{{$item->id}}">{{$item->nazov}}</option>
+                                                @endif
+                                            @endforeach
+                                        </select>
+                                        @if($errors->has('id_prekladatel_stav'))
+                                            <span class="help-block m-b-none">{{ $errors->first('id_prekladatel_stav') }}</span>
+                                        @endif
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-6">
+
+                                <!-- id_jazyk Form Input -->
+                                <div class="form-group">
+                                    {!! Form::label('id_jazyk','Jazyk:', ['class' => 'col-md-4 control-label']) !!}
+                                    <div class="col-md-8">
+                                        <select name="id_jazyk" class="form-control select2">
+                                            <option value=""></option>
+                                            @foreach($jazykList as $item)
+                                                @if($filter->id_jazyk == $item->id)
+                                                    <option value="{{$item->id}}" selected="selected">{{$item->nazov}}</option>
+                                                @else
+                                                    <option value="{{$item->id}}">{{$item->nazov}}</option>
+                                                @endif
+                                            @endforeach
+                                        </select>
+                                        @if($errors->has('id_jazyk'))
+                                            <span class="help-block m-b-none">{{ $errors->first('id_jazyk') }}</span>
+                                        @endif
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-md-offset-4 col-md-8">
+                                        <span class="input-group-btn">
+                                            <button type="submit" class="btn btn btn-primary"> <i class="fa fa-search"></i> Hľadať</button>
+                                        </span>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        
+                        {!! Form::close() !!}
+                    </div>
 
                     <div class="clients-list">
                         <div class="full-height-scroll">

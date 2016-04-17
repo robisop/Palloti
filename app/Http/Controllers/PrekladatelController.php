@@ -32,10 +32,12 @@ class PrekladatelController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $filter)
     {
         $prekladatelia = Prekladatel::with('jazyk','stav')->get();
-        return view('prekladatel.index', compact('prekladatelia'));
+        $jazykList = Jazyk::all('id', 'nazov');
+        $stavList = PrekladatelStav::all('id', 'nazov');
+        return view('prekladatel.index', compact('prekladatelia', 'filter', 'stavList', 'jazykList'));
     }
 
     /**
