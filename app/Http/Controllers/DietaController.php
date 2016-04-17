@@ -28,16 +28,20 @@ class DietaController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     /**
      * Display a listing of the resource.
      *
+     * @param Request $filter
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $filter)
     {
         $deti = Dieta::with('misia.krajina', 'stav', 'rodic')->get();
-        return view('dieta.index', compact('deti'));
+        $stavList = DietaStav::all('id', 'nazov');
+        $krajinaList = Krajina::all('id', 'nazov');
+        $misiaList = Misia::all('id', 'nazov', 'id_krajina');
+        return view('dieta.index', compact('deti', 'filter', 'stavList', 'krajinaList', 'misiaList'));
     }
 
     /**

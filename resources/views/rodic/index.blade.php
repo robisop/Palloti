@@ -93,7 +93,9 @@ Rodicia
                                 <!-- submit Form Input -->
                                 <div class="form-group">
                                     <div class="col-md-offset-4 col-md-8">
-                                        {!! Form::submit('Hľadať', ['class' => 'btn btn-primary']) !!}
+                                        <span class="input-group-btn">
+                                            <button type="submit" class="btn btn btn-primary"> <i class="fa fa-search"></i> Hľadať</button>
+                                        </span>
                                     </div>
                                 </div>
                             </div>
