@@ -7,8 +7,8 @@
 
         <!-- nazov Form Input -->
         <div class="form-group">
-            {!! Form::label('nazov','Názov:', ['class' => 'col-md-2 control-label']) !!}
-            <div class="col-md-10">
+            {!! Form::label('nazov','Názov:', ['class' => 'col-md-4 control-label']) !!}
+            <div class="col-md-8">
                 {!! Form::text('nazov', null, ['class' => 'form-control']) !!}
                 @if($errors->has('nazov'))
                     <span class="help-block m-b-none">{{ $errors->first('nazov') }}</span>
@@ -18,8 +18,8 @@
 
         <!-- id_poziadavka_typ Form Input -->
         <div class="form-group">
-            {!! Form::label('id_poziadavka_typ','Typ:', ['class' => 'col-md-2 control-label']) !!}
-            <div class="col-md-10">
+            {!! Form::label('id_poziadavka_typ','Typ:', ['class' => 'col-md-4 control-label']) !!}
+            <div class="col-md-8">
                 <select name="id_poziadavka_typ" class="form-control select2">
                     @foreach($typList as $item)
                         @if($poziadavka->id_poziadavka_typ == $item->id)
@@ -37,8 +37,8 @@
 
         <!-- id_poziadavka_stav Form Input -->
         <div class="form-group">
-            {!! Form::label('id_poziadavka_stav','Stav:', ['class' => 'col-md-2 control-label']) !!}
-            <div class="col-md-10">
+            {!! Form::label('id_poziadavka_stav','Stav:', ['class' => 'col-md-4 control-label']) !!}
+            <div class="col-md-8">
                 <select name="id_poziadavka_stav" class="form-control select2">
                     @foreach($stavList as $item)
                         @if($poziadavka->id_poziadavka_stav == $item->id)
@@ -56,8 +56,8 @@
 
         <!-- id_dieta Form Input -->
         <div class="form-group">
-            {!! Form::label('id_dieta','Dieťa:', ['class' => 'col-md-2 control-label']) !!}
-            <div class="col-md-10">
+            {!! Form::label('id_dieta','Dieťa:', ['class' => 'col-md-4 control-label']) !!}
+            <div class="col-md-8">
                 <select name="id_dieta" class="form-control select2">
                     @foreach($dietaList as $item)
                         @if($poziadavka->id_dieta == $item->id)
@@ -75,8 +75,8 @@
 
         <!-- popis Form Input -->
         <div class="form-group">
-            {!! Form::label('popis','Popis:', ['class' => 'col-md-2 control-label']) !!}
-            <div class="col-md-10">
+            {!! Form::label('popis','Popis:', ['class' => 'col-md-4 control-label']) !!}
+            <div class="col-md-8">
                 {!! Form::textarea('popis', null, ['class' => 'form-control', 'cols' => 50, 'rows' => 10]) !!}
                 @if($errors->has('popis'))
                     <span class="help-block m-b-none">{{ $errors->first('popis') }}</span>
@@ -89,8 +89,8 @@
 
         <!-- datum_odoslania Form Input -->
         <div class="form-group">
-            {!! Form::label('datum_odoslania','Dátum odoslania:', ['class' => 'col-md-2 control-label']) !!}
-            <div class="col-md-10">
+            {!! Form::label('datum_odoslania','Dátum odoslania:', ['class' => 'col-md-4 control-label']) !!}
+            <div class="col-md-8">
                 <div class="input-group date">
                     <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                     @if(isset($poziadavka->datum_odoslania))
@@ -107,8 +107,8 @@
 
         <!-- datum_prijatia_odpovede Form Input -->
         <div class="form-group">
-            {!! Form::label('datum_prijatia_odpovede','Dátum prijatia odpovede:', ['class' => 'col-md-2 control-label']) !!}
-            <div class="col-md-10">
+            {!! Form::label('datum_prijatia_odpovede','Dátum prijatia odpovede:', ['class' => 'col-md-4 control-label']) !!}
+            <div class="col-md-8">
                 <div class="input-group date">
                     <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                     @if(isset($poziadavka->datum_prijatia_odpovede))
@@ -125,8 +125,8 @@
 
         <!-- odpoved Form Input -->
         <div class="form-group">
-            {!! Form::label('odpoved','Odpoveď:', ['class' => 'col-md-2 control-label']) !!}
-            <div class="col-md-10">
+            {!! Form::label('odpoved','Odpoveď:', ['class' => 'col-md-4 control-label']) !!}
+            <div class="col-md-8">
                 {!! Form::textarea('odpoved', null, ['class' => 'form-control', 'cols' => 50, 'rows' => 10]) !!}
                 @if($errors->has('odpoved'))
                     <span class="help-block m-b-none">{{ $errors->first('odpoved') }}</span>
@@ -142,7 +142,7 @@
 
         <!-- submit Form Input -->
         <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
+            <div class="col-md-offset-4 col-md-8">
                 {!! Form::submit($submitText, ['class' => 'btn btn-primary']) !!}
                 <a class="btn btn-default" href="{{ route('poziadavka.show', $poziadavka->id) }}">Späť bez uloženia</a>
             </div>

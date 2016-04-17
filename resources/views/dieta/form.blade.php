@@ -7,8 +7,8 @@
 
         <!-- meno Form Input -->
         <div class="form-group">
-            {!! Form::label('meno','Meno:', ['class' => 'col-md-2 control-label']) !!}
-            <div class="col-md-10">
+            {!! Form::label('meno','Meno:', ['class' => 'col-md-4 control-label']) !!}
+            <div class="col-md-8">
                 {!! Form::text('meno', null, ['class' => 'form-control']) !!}
                 @if($errors->has('meno'))
                     <span class="help-block m-b-none">{{ $errors->first('meno') }}</span>
@@ -18,8 +18,8 @@
 
         <!-- priezvisko Form Input -->
         <div class="form-group">
-            {!! Form::label('priezvisko','Priezvisko:', ['class' => 'col-md-2 control-label']) !!}
-            <div class="col-md-10">
+            {!! Form::label('priezvisko','Priezvisko:', ['class' => 'col-md-4 control-label']) !!}
+            <div class="col-md-8">
                 {!! Form::text('priezvisko', null, ['class' => 'form-control']) !!}
                 @if($errors->has('priezvisko'))
                     <span class="help-block m-b-none">{{ $errors->first('priezvisko') }}</span>
@@ -29,8 +29,8 @@
 
         <!-- pohlavie Form Input -->
         <div class="form-group">
-            {!! Form::label('pohlavie','Pohlavie:', ['class' => 'col-md-2 control-label']) !!}
-            <div class="col-md-10">
+            {!! Form::label('pohlavie','Pohlavie:', ['class' => 'col-md-4 control-label']) !!}
+            <div class="col-md-8">
                 <div class="i-checks">
                     <label>
                     {!! Form::radio('pohlavie', 'M', null, ['class' => 'form-control']) !!}
@@ -51,8 +51,8 @@
 
         <!-- datumNarodenia Form Input -->
         <div class="form-group">
-            {!! Form::label('datum_narodenia','Dátum narodenia:', ['class' => 'col-md-2 control-label']) !!}
-            <div class="col-md-10">
+            {!! Form::label('datum_narodenia','Dátum narodenia:', ['class' => 'col-md-4 control-label']) !!}
+            <div class="col-md-8">
                 <div class="input-group date">
                     <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                     @if(isset($dieta->datum_narodenia))
@@ -69,8 +69,8 @@
 
         <!-- rokNarodenia Form Input -->
         <div class="form-group">
-            {!! Form::label('rok_narodenia','Rok narodenia:', ['class' => 'col-md-2 control-label']) !!}
-            <div class="col-md-10">
+            {!! Form::label('rok_narodenia','Rok narodenia:', ['class' => 'col-md-4 control-label']) !!}
+            <div class="col-md-8">
                 {!! Form::text('rok_narodenia', null, ['class' => 'form-control']) !!}
                 @if($errors->has('rok_narodenia'))
                     <span class="help-block m-b-none">{{ $errors->first('rok_narodenia') }}</span>
@@ -80,8 +80,8 @@
 
         <!-- rodinnyStav Form Input -->
         <div class="form-group">
-            {!! Form::label('id_rodinny_stav','Rodinný stav:', ['class' => 'col-md-2 control-label']) !!}
-            <div class="col-md-10">
+            {!! Form::label('id_rodinny_stav','Rodinný stav:', ['class' => 'col-md-4 control-label']) !!}
+            <div class="col-md-8">
                 <select name="id_rodinny_stav" class="form-control select2">
                     @foreach($rodinnyStavList as $item)
                         @if($dieta->id_rodinny_stav == $item->id)
@@ -99,8 +99,8 @@
 
         <!-- skola Form Input -->
         <div class="form-group">
-            {!! Form::label('id_skola','Škola:', ['class' => 'col-md-2 control-label']) !!}
-            <div class="col-md-10">
+            {!! Form::label('id_skola','Škola:', ['class' => 'col-md-4 control-label']) !!}
+            <div class="col-md-8">
                 <select name="id_skola" class="form-control select2">
                     @foreach($skolaList as $item)
                         @if($dieta->id_skola == $item->id)
@@ -118,8 +118,8 @@
 
         <!-- skolaDatum Form Input -->
         <div class="form-group">
-            {!! Form::label('skola_datum_nastavenia','Škola - dátum nastavenia:', ['class' => 'col-md-2 control-label']) !!}
-            <div class="col-md-10">
+            {!! Form::label('skola_datum_nastavenia','Škola - dátum nastavenia:', ['class' => 'col-md-4 control-label']) !!}
+            <div class="col-md-8">
                 <div class="input-group date">
                     <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                     @if(isset($dieta->skola_datum_nastavenia))
@@ -136,7 +136,7 @@
 
         <!-- prekladatList Form Input -->
         <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
+            <div class="col-md-offset-4 col-md-8">
                 <div class="i-checks">
                     <label>
                     {!! Form::checkbox('prekladat_list', 1, null, ['class' => 'form-control']) !!}
@@ -154,8 +154,8 @@
 
         <!-- krajina Form Input -->
         <div class="form-group">
-            {!! Form::label('krajina','Krajina:', ['class' => 'col-md-2 control-label']) !!}
-            <div class="col-md-10">
+            {!! Form::label('krajina','Krajina:', ['class' => 'col-md-4 control-label']) !!}
+            <div class="col-md-8">
                 <select name="misia.id_krajina" class="form-control select2">
                     @foreach($krajinaList as $item)
                         @if($dieta->misia->id_krajina == $item->id)
@@ -173,8 +173,8 @@
 
         <!-- misia Form Input -->
         <div class="form-group">
-            {!! Form::label('id_misia','Misia:', ['class' => 'col-md-2 control-label']) !!}
-            <div class="col-md-10">
+            {!! Form::label('id_misia','Misia:', ['class' => 'col-md-4 control-label']) !!}
+            <div class="col-md-8">
                 <select name="id_misia" class="form-control select2">
                     @foreach($misiaList as $item)
                         @if($dieta->id_misia == $item->id)
@@ -192,8 +192,8 @@
 
         <!-- id Form Input -->
         <div class="form-group">
-            {!! Form::label('id','ID:', ['class' => 'col-md-2 control-label']) !!}
-            <div class="col-md-10">
+            {!! Form::label('id','ID:', ['class' => 'col-md-4 control-label']) !!}
+            <div class="col-md-8">
                 {!! Form::text('id', null, ['class' => 'form-control']) !!}
                 @if($errors->has('id'))
                     <span class="help-block m-b-none">{{ $errors->first('id') }}</span>
@@ -203,8 +203,8 @@
 
         <!-- poznamka Form Input -->
         <div class="form-group">
-            {!! Form::label('poznamka','Poznámka:', ['class' => 'col-md-2 control-label']) !!}
-            <div class="col-md-10">
+            {!! Form::label('poznamka','Poznámka:', ['class' => 'col-md-4 control-label']) !!}
+            <div class="col-md-8">
                 {!! Form::textarea('poznamka', null, ['class' => 'form-control', 'cols' => 50, 'rows' => 10]) !!}
                 @if($errors->has('poznamka'))
                     <span class="help-block m-b-none">{{ $errors->first('poznamka') }}</span>
@@ -214,8 +214,8 @@
 
         <!-- stav Form Input -->
         <div class="form-group">
-            {!! Form::label('id_dieta_stav','Stav:', ['class' => 'col-md-2 control-label']) !!}
-            <div class="col-md-10">
+            {!! Form::label('id_dieta_stav','Stav:', ['class' => 'col-md-4 control-label']) !!}
+            <div class="col-md-8">
                 <select name="id_dieta_stav" class="form-control select2">
                     @foreach($stavList as $item)
                         @if($dieta->id_dieta_stav == $item->id)
@@ -233,8 +233,8 @@
 
         <!-- dovodUkoncenia Form Input -->
         <div class="form-group">
-            {!! Form::label('dovod_ukoncenia','Dôvod ukončenia:', ['class' => 'col-md-2 control-label']) !!}
-            <div class="col-md-10">
+            {!! Form::label('dovod_ukoncenia','Dôvod ukončenia:', ['class' => 'col-md-4 control-label']) !!}
+            <div class="col-md-8">
                 {!! Form::text('dovod_ukoncenia', null, ['class' => 'form-control']) !!}
                 @if($errors->has('dovod_ukoncenia'))
                     <span class="help-block m-b-none">{{ $errors->first('dovod_ukoncenia') }}</span>
@@ -244,8 +244,8 @@
 
         <!-- pozastaveneDo Form Input -->
         <div class="form-group">
-            {!! Form::label('datum_pozastavene_do','Pozastavené do:', ['class' => 'col-md-2 control-label']) !!}
-            <div class="col-md-10">
+            {!! Form::label('datum_pozastavene_do','Pozastavené do:', ['class' => 'col-md-4 control-label']) !!}
+            <div class="col-md-8">
                 <div class="input-group date">
                     <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                     @if(isset($dieta->datum_narodenia))
@@ -268,7 +268,7 @@
 
         <!-- submit Form Input -->
         <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
+            <div class="col-md-offset-4 col-md-8">
                 {!! Form::submit($submitText, ['class' => 'btn btn-primary']) !!}
                 <a class="btn btn-default" href="{{ route('dieta.show', $dieta->id) }}">Späť bez uloženia</a>
             </div>

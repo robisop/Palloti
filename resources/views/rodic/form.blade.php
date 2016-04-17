@@ -7,7 +7,7 @@
 
         <!-- je_institucia Form Input -->
         <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
+            <div class="col-md-offset-4 col-md-8">
                 <div class="i-checks">
                     <label>
                         {!! Form::checkbox('je_institucia', 1, null, ['class' => 'form-control']) !!}
@@ -22,8 +22,8 @@
 
         <!-- nazov_spolocnosti Form Input -->
         <div class="form-group">
-            {!! Form::label('nazov_spolocnosti','Názov spoločnosti:', ['class' => 'col-md-2 control-label']) !!}
-            <div class="col-md-10">
+            {!! Form::label('nazov_spolocnosti','Názov spoločnosti:', ['class' => 'col-md-4 control-label']) !!}
+            <div class="col-md-8">
                 {!! Form::text('nazov_spolocnosti', null, ['class' => 'form-control']) !!}
                 @if($errors->has('nazov_spolocnosti'))
                     <span class="help-block m-b-none">{{ $errors->first('nazov_spolocnosti') }}</span>
@@ -33,8 +33,8 @@
 
         <!-- oslovenie Form Input -->
         <div class="form-group">
-            {!! Form::label('oslovenie','Titul, oslovenie:', ['class' => 'col-md-2 control-label']) !!}
-            <div class="col-md-10">
+            {!! Form::label('oslovenie','Titul, oslovenie:', ['class' => 'col-md-4 control-label']) !!}
+            <div class="col-md-8">
                 {!! Form::text('oslovenie', null, ['class' => 'form-control']) !!}
                 @if($errors->has('oslovenie'))
                     <span class="help-block m-b-none">{{ $errors->first('oslovenie') }}</span>
@@ -44,8 +44,8 @@
 
         <!-- meno Form Input -->
         <div class="form-group">
-            {!! Form::label('meno','Meno:', ['class' => 'col-md-2 control-label']) !!}
-            <div class="col-md-10">
+            {!! Form::label('meno','Meno:', ['class' => 'col-md-4 control-label']) !!}
+            <div class="col-md-8">
                 {!! Form::text('meno', null, ['class' => 'form-control']) !!}
                 @if($errors->has('meno'))
                     <span class="help-block m-b-none">{{ $errors->first('meno') }}</span>
@@ -55,8 +55,8 @@
 
         <!-- priezvisko Form Input -->
         <div class="form-group">
-            {!! Form::label('priezvisko','Priezvisko:', ['class' => 'col-md-2 control-label']) !!}
-            <div class="col-md-10">
+            {!! Form::label('priezvisko','Priezvisko:', ['class' => 'col-md-4 control-label']) !!}
+            <div class="col-md-8">
                 {!! Form::text('priezvisko', null, ['class' => 'form-control']) !!}
                 @if($errors->has('priezvisko'))
                     <span class="help-block m-b-none">{{ $errors->first('priezvisko') }}</span>
@@ -66,8 +66,8 @@
 
         <!-- email Form Input -->
         <div class="form-group">
-            {!! Form::label('email','Email:', ['class' => 'col-md-2 control-label']) !!}
-            <div class="col-md-10">
+            {!! Form::label('email','Email:', ['class' => 'col-md-4 control-label']) !!}
+            <div class="col-md-8">
                 {!! Form::email('email', null, ['class' => 'form-control']) !!}
                 @if($errors->has('email'))
                     <span class="help-block m-b-none">{{ $errors->first('email') }}</span>
@@ -77,8 +77,8 @@
 
         <!-- telefon Form Input -->
         <div class="form-group">
-            {!! Form::label('telefon','Telefón:', ['class' => 'col-md-2 control-label']) !!}
-            <div class="col-md-10">
+            {!! Form::label('telefon','Telefón:', ['class' => 'col-md-4 control-label']) !!}
+            <div class="col-md-8">
                 {!! Form::text('telefon', null, ['class' => 'form-control']) !!}
                 @if($errors->has('telefon'))
                     <span class="help-block m-b-none">{{ $errors->first('telefon') }}</span>
@@ -88,8 +88,8 @@
 
         <!-- telefon2 Form Input -->
         <div class="form-group">
-            {!! Form::label('telefon2','Telefón 2:', ['class' => 'col-md-2 control-label']) !!}
-            <div class="col-md-10">
+            {!! Form::label('telefon2','Telefón 2:', ['class' => 'col-md-4 control-label']) !!}
+            <div class="col-md-8">
                 {!! Form::text('telefon2', null, ['class' => 'form-control']) !!}
                 @if($errors->has('telefon2'))
                     <span class="help-block m-b-none">{{ $errors->first('telefon2') }}</span>
@@ -99,8 +99,8 @@
 
         <!-- iban Form Input -->
         <div class="form-group">
-            {!! Form::label('iban','Číslo účtu:', ['class' => 'col-md-2 control-label']) !!}
-            <div class="col-md-10">
+            {!! Form::label('iban','Číslo účtu:', ['class' => 'col-md-4 control-label']) !!}
+            <div class="col-md-8">
                 {!! Form::text('iban', null, ['class' => 'form-control']) !!}
                 @if($errors->has('iban'))
                     <span class="help-block m-b-none">{{ $errors->first('iban') }}</span>
@@ -113,15 +113,15 @@
     <div class="col-md-6">
 
         <div class="form-group">
-            <label class="col-md-2 control-label">Adresa</label>
-            <div class="col-md-10">
+            <label class="col-md-4 control-label">Adresa</label>
+            <div class="col-md-8">
             </div>
         </div>
 
         <!-- ulica Form Input -->
         <div class="form-group">
-            {!! Form::label('adresa.ulica','Ulica:', ['class' => 'col-md-2 control-label']) !!}
-            <div class="col-md-10">
+            {!! Form::label('adresa.ulica','Ulica:', ['class' => 'col-md-4 control-label']) !!}
+            <div class="col-md-8">
                 @if($rodic->adresa != null)
                     <input type="text" name="adresa.ulica" value="{{$rodic->adresa->ulica}}" class="form-control">
                 @else
@@ -135,8 +135,8 @@
 
         <!-- mesto Form Input -->
         <div class="form-group">
-            {!! Form::label('adresa.mesto','Mesto:', ['class' => 'col-md-2 control-label']) !!}
-            <div class="col-md-10">
+            {!! Form::label('adresa.mesto','Mesto:', ['class' => 'col-md-4 control-label']) !!}
+            <div class="col-md-8">
                 @if($rodic->adresa != null)
                     <input type="text" name="adresa.mesto" value="{{$rodic->adresa->mesto}}" class="form-control">
                 @else
@@ -150,8 +150,8 @@
 
         <!-- psc Form Input -->
         <div class="form-group">
-            {!! Form::label('adresa.psc','PSČ:', ['class' => 'col-md-2 control-label']) !!}
-            <div class="col-md-10">
+            {!! Form::label('adresa.psc','PSČ:', ['class' => 'col-md-4 control-label']) !!}
+            <div class="col-md-8">
                 @if($rodic->adresa != null)
                     <input type="text" name="adresa.psc" value="{{$rodic->adresa->psc}}" class="form-control">
                 @else
@@ -165,8 +165,8 @@
 
         <!-- id_krajina Form Input -->
         <div class="form-group">
-            {!! Form::label('adresa.id_krajina','Krajina:', ['class' => 'col-md-2 control-label']) !!}
-            <div class="col-md-10">
+            {!! Form::label('adresa.id_krajina','Krajina:', ['class' => 'col-md-4 control-label']) !!}
+            <div class="col-md-8">
                 <select name="adresa.id_krajina" class="form-control select2">
                     @foreach($krajinaList as $item)
                         @if($rodic->adresa->id_krajina == $item->id)
@@ -186,8 +186,8 @@
 
         <!-- poznamka Form Input -->
         <div class="form-group">
-            {!! Form::label('poznamka','Poznámka:', ['class' => 'col-md-2 control-label']) !!}
-            <div class="col-md-10">
+            {!! Form::label('poznamka','Poznámka:', ['class' => 'col-md-4 control-label']) !!}
+            <div class="col-md-8">
                 {!! Form::textarea('poznamka', null, ['class' => 'form-control', 'cols' => 50, 'rows' => 10]) !!}
                 @if($errors->has('poznamka'))
                     <span class="help-block m-b-none">{{ $errors->first('poznamka') }}</span>
@@ -203,8 +203,8 @@
 
         <!-- id_rodic_stav Form Input -->
         <div class="form-group">
-            {!! Form::label('id_rodic_stav','Stav:', ['class' => 'col-md-2 control-label']) !!}
-            <div class="col-md-10">
+            {!! Form::label('id_rodic_stav','Stav:', ['class' => 'col-md-4 control-label']) !!}
+            <div class="col-md-8">
                 <select name="id_rodic_stav" class="form-control select2">
                     @foreach($rodicStavList as $item)
                         @if($rodic->id_rodic_stav == $item->id)
@@ -222,7 +222,7 @@
 
         <!-- posielat_casopis Form Input -->
         <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
+            <div class="col-md-offset-4 col-md-8">
                 <div class="i-checks">
                     <label>
                     {!! Form::checkbox('posielat_casopis', 1, null, ['class' => 'form-control']) !!}
@@ -237,7 +237,7 @@
 
         <!-- posielat_podakovania Form Input -->
         <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
+            <div class="col-md-offset-4 col-md-8">
                 <div class="i-checks">
                     <label>
                     {!! Form::checkbox('posielat_podakovania', 1, null, ['class' => 'form-control']) !!}
@@ -252,8 +252,8 @@
 
         <!-- id_sposob_komunikacie Form Input -->
         <div class="form-group">
-            {!! Form::label('id_sposob_komunikacie','Spôsob komunikácie:', ['class' => 'col-md-2 control-label']) !!}
-            <div class="col-md-10">
+            {!! Form::label('id_sposob_komunikacie','Spôsob komunikácie:', ['class' => 'col-md-4 control-label']) !!}
+            <div class="col-md-8">
                 <select name="id_sposob_komunikacie" class="form-control select2">
                     @foreach($sposobKomunikacieList as $item)
                         @if($rodic->id_sposob_komunikacie == $item->id)
@@ -275,8 +275,8 @@
 
         <!-- datum_podpisu_zmluvy Form Input -->
         <div class="form-group">
-            {!! Form::label('datum_podpisu_zmluvy','Dátum uzavretia zmluvy:', ['class' => 'col-md-2 control-label']) !!}
-            <div class="col-md-10">
+            {!! Form::label('datum_podpisu_zmluvy','Dátum uzavretia zmluvy:', ['class' => 'col-md-4 control-label']) !!}
+            <div class="col-md-8">
                 <div class="input-group date">
                     <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                     @if(isset($rodic->datum_podpisu_zmluvy))
@@ -293,8 +293,8 @@
 
         <!-- datum_ukoncenia_zmluvy Form Input -->
         <div class="form-group">
-            {!! Form::label('datum_ukoncenia_zmluvy','Dátum ukončenia:', ['class' => 'col-md-2 control-label']) !!}
-            <div class="col-md-10">
+            {!! Form::label('datum_ukoncenia_zmluvy','Dátum ukončenia:', ['class' => 'col-md-4 control-label']) !!}
+            <div class="col-md-8">
                 <div class="input-group date">
                     <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                     @if(isset($rodic->datum_ukoncenia_zmluvy))
@@ -317,7 +317,7 @@
 
         <!-- submit Form Input -->
         <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
+            <div class="col-md-offset-4 col-md-8">
                 {!! Form::submit($submitText, ['class' => 'btn btn-primary']) !!}
                 <a class="btn btn-default" href="{{ route('rodic.show', $rodic->id) }}">Späť bez uloženia</a>
             </div>

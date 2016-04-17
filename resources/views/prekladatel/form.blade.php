@@ -7,8 +7,8 @@
 
         <!-- oslovenie Form Input -->
         <div class="form-group">
-            {!! Form::label('oslovenie','Titul, oslovenie:', ['class' => 'col-md-2 control-label']) !!}
-            <div class="col-md-10">
+            {!! Form::label('oslovenie','Titul, oslovenie:', ['class' => 'col-md-4 control-label']) !!}
+            <div class="col-md-8">
                 {!! Form::text('oslovenie', null, ['class' => 'form-control']) !!}
                 @if($errors->has('oslovenie'))
                     <span class="help-block m-b-none">{{ $errors->first('oslovenie') }}</span>
@@ -18,8 +18,8 @@
 
         <!-- meno Form Input -->
         <div class="form-group">
-            {!! Form::label('meno','Meno:', ['class' => 'col-md-2 control-label']) !!}
-            <div class="col-md-10">
+            {!! Form::label('meno','Meno:', ['class' => 'col-md-4 control-label']) !!}
+            <div class="col-md-8">
                 {!! Form::text('meno', null, ['class' => 'form-control']) !!}
                 @if($errors->has('meno'))
                     <span class="help-block m-b-none">{{ $errors->first('meno') }}</span>
@@ -29,8 +29,8 @@
 
         <!-- priezvisko Form Input -->
         <div class="form-group">
-            {!! Form::label('priezvisko','Priezvisko:', ['class' => 'col-md-2 control-label']) !!}
-            <div class="col-md-10">
+            {!! Form::label('priezvisko','Priezvisko:', ['class' => 'col-md-4 control-label']) !!}
+            <div class="col-md-8">
                 {!! Form::text('priezvisko', null, ['class' => 'form-control']) !!}
                 @if($errors->has('priezvisko'))
                     <span class="help-block m-b-none">{{ $errors->first('priezvisko') }}</span>
@@ -40,8 +40,8 @@
 
         <!-- email Form Input -->
         <div class="form-group">
-            {!! Form::label('email','Email:', ['class' => 'col-md-2 control-label']) !!}
-            <div class="col-md-10">
+            {!! Form::label('email','Email:', ['class' => 'col-md-4 control-label']) !!}
+            <div class="col-md-8">
                 {!! Form::email('email', null, ['class' => 'form-control']) !!}
                 @if($errors->has('email'))
                     <span class="help-block m-b-none">{{ $errors->first('email') }}</span>
@@ -51,8 +51,8 @@
 
         <!-- telefon Form Input -->
         <div class="form-group">
-            {!! Form::label('telefon','Telefón:', ['class' => 'col-md-2 control-label']) !!}
-            <div class="col-md-10">
+            {!! Form::label('telefon','Telefón:', ['class' => 'col-md-4 control-label']) !!}
+            <div class="col-md-8">
                 {!! Form::text('telefon', null, ['class' => 'form-control']) !!}
                 @if($errors->has('telefon'))
                     <span class="help-block m-b-none">{{ $errors->first('telefon') }}</span>
@@ -62,8 +62,8 @@
 
         <!-- id_sposob_dorucenia Form Input -->
         <div class="form-group">
-            {!! Form::label('id_sposob_dorucenia','Listy doručovať:', ['class' => 'col-md-2 control-label']) !!}
-            <div class="col-md-10">
+            {!! Form::label('id_sposob_dorucenia','Listy doručovať:', ['class' => 'col-md-4 control-label']) !!}
+            <div class="col-md-8">
                 <select name="id_sposob_dorucenia" class="form-control select2">
                     @foreach($sposobDoruceniaList as $item)
                         @if($prekladatel->id_sposob_dorucenia == $item->id)
@@ -81,8 +81,8 @@
         
         <!-- id_jazyk Form Input -->
         <div class="form-group">
-            {!! Form::label('id_jazyk','Prekladá jazyky:', ['class' => 'col-md-2 control-label']) !!}
-            <div class="col-md-10">
+            {!! Form::label('id_jazyk','Prekladá jazyky:', ['class' => 'col-md-4 control-label']) !!}
+            <div class="col-md-8">
                 <select name="id_jazyk[]" class="form-control select2" multiple="multiple">
                     @foreach($jazykList as $item)
                         @if(in_array($item->id, $prekladatel->jazyk->pluck('id')->toArray()))
@@ -102,15 +102,15 @@
     <div class="col-md-6">
 
         <div class="form-group">
-            <label class="col-md-2 control-label">Adresa</label>
-            <div class="col-md-10">
+            <label class="col-md-4 control-label">Adresa</label>
+            <div class="col-md-8">
             </div>
         </div>
 
         <!-- ulica Form Input -->
         <div class="form-group">
-            {!! Form::label('adresa.ulica','Ulica:', ['class' => 'col-md-2 control-label']) !!}
-            <div class="col-md-10">
+            {!! Form::label('adresa.ulica','Ulica:', ['class' => 'col-md-4 control-label']) !!}
+            <div class="col-md-8">
                 @if($prekladatel->adresa != null)
                     <input type="text" name="adresa.ulica" value="{{$prekladatel->adresa->ulica}}" class="form-control">
                 @else
@@ -124,8 +124,8 @@
 
         <!-- mesto Form Input -->
         <div class="form-group">
-            {!! Form::label('adresa.mesto','Mesto:', ['class' => 'col-md-2 control-label']) !!}
-            <div class="col-md-10">
+            {!! Form::label('adresa.mesto','Mesto:', ['class' => 'col-md-4 control-label']) !!}
+            <div class="col-md-8">
                 @if($prekladatel->adresa != null)
                     <input type="text" name="adresa.mesto" value="{{$prekladatel->adresa->mesto}}" class="form-control">
                 @else
@@ -139,8 +139,8 @@
 
         <!-- psc Form Input -->
         <div class="form-group">
-            {!! Form::label('adresa.psc','PSČ:', ['class' => 'col-md-2 control-label']) !!}
-            <div class="col-md-10">
+            {!! Form::label('adresa.psc','PSČ:', ['class' => 'col-md-4 control-label']) !!}
+            <div class="col-md-8">
                 @if($prekladatel->adresa != null)
                     <input type="text" name="adresa.psc" value="{{$prekladatel->adresa->psc}}" class="form-control">
                 @else
@@ -154,8 +154,8 @@
 
         <!-- id_krajina Form Input -->
         <div class="form-group">
-            {!! Form::label('adresa.id_krajina','Krajina:', ['class' => 'col-md-2 control-label']) !!}
-            <div class="col-md-10">
+            {!! Form::label('adresa.id_krajina','Krajina:', ['class' => 'col-md-4 control-label']) !!}
+            <div class="col-md-8">
                 <select name="adresa.id_krajina" class="form-control select2">
                     @foreach($krajinaList as $item)
                         @if($prekladatel->adresa->id_krajina == $item->id)
@@ -175,8 +175,8 @@
 
         <!-- poznamka Form Input -->
         <div class="form-group">
-            {!! Form::label('poznamka','Poznámka:', ['class' => 'col-md-2 control-label']) !!}
-            <div class="col-md-10">
+            {!! Form::label('poznamka','Poznámka:', ['class' => 'col-md-4 control-label']) !!}
+            <div class="col-md-8">
                 {!! Form::textarea('poznamka', null, ['class' => 'form-control', 'cols' => 50, 'rows' => 10]) !!}
                 @if($errors->has('poznamka'))
                     <span class="help-block m-b-none">{{ $errors->first('poznamka') }}</span>
@@ -186,8 +186,8 @@
 
         <!-- id_prekladatel_stav Form Input -->
         <div class="form-group">
-            {!! Form::label('id_prekladatel_stav','Stav:', ['class' => 'col-md-2 control-label']) !!}
-            <div class="col-md-10">
+            {!! Form::label('id_prekladatel_stav','Stav:', ['class' => 'col-md-4 control-label']) !!}
+            <div class="col-md-8">
                 <select name="id_prekladatel_stav" class="form-control select2">
                     @foreach($stavList as $item)
                         @if($prekladatel->id_prekladatel_stav == $item->id)
@@ -211,7 +211,7 @@
 
         <!-- submit Form Input -->
         <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
+            <div class="col-md-offset-4 col-md-8">
                 {!! Form::submit($submitText, ['class' => 'btn btn-primary']) !!}
                 <a class="btn btn-default" href="{{ route('prekladatel.show', $prekladatel->id) }}">Späť bez uloženia</a>
             </div>

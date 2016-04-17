@@ -21,19 +21,21 @@
                         </div>
                     </div>
 
+                    <!-- $projekt->dieta->meno -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Dieťa:</label>
+                        <div class="col-md-8">
+                            <p class="form-control-static">
+                                <a href="{{ route('dieta.show', $projekt->id_dieta) }}">{{ $projekt->dieta->meno.' '.$projekt->dieta->priezvisko  }}</a>
+                            </p>
+                        </div>
+                    </div>
+
                     <!-- $projekt->popis -->
                     <div class="form-group">
                         <label class="col-md-4 control-label">Popis:</label>
                         <div class="col-md-8">
                             <p class="form-control-static">{{ $projekt->popis }}</p>
-                        </div>
-                    </div>
-
-                    <!-- $projekt->poznamka -->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label">Poznámka:</label>
-                        <div class="col-md-8">
-                            <p class="form-control-static">{{ $projekt->poznamka }}</p>
                         </div>
                     </div>
 
@@ -48,21 +50,19 @@
                         </div>
                     </div>
 
-                    <!-- $projekt->dieta->meno -->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label">Dieťa:</label>
-                        <div class="col-md-8">
-                            <p class="form-control-static">
-                                <a href="{{ route('dieta.show', $projekt->id_dieta) }}">{{ $projekt->dieta->meno.' '.$projekt->dieta->priezvisko  }}</a>
-                            </p>
-                        </div>
-                    </div>
-
                     <!-- $projekt->stav->nazov -->
                     <div class="form-group">
                         <label class="col-md-4 control-label">Stav:</label>
                         <div class="col-md-8">
                             <p class="form-control-static">{{ $projekt->stav->nazov }}</p>
+                        </div>
+                    </div>
+
+                    <!-- $projekt->poznamka -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Poznámka:</label>
+                        <div class="col-md-8">
+                            <p class="form-control-static">{{ $projekt->poznamka }}</p>
                         </div>
                     </div>
 
