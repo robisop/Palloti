@@ -1,3 +1,7 @@
+<?php
+    $current_year = date('Y');
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -94,12 +98,12 @@
                 <div class="navbar-header">
                     <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i>
                     </a>
-                    <form role="search" class="navbar-form-custom" method="post" action="#">
+                    {{--<form role="search" class="navbar-form-custom" method="post" action="#">
                         <div class="form-group">
                             <input type="text" placeholder="Search for something..." class="form-control"
                                    name="top-search" id="top-search">
                         </div>
-                    </form>
+                    </form>--}}
                 </div>
                 <ul class="nav navbar-top-links navbar-right">
                     <li>
@@ -118,11 +122,10 @@
                     <div class="col-lg-12">
                         <div class="text-center m-t-lg">
                             <h1>
-                                Welcome in INSPINIA Static SeedProject
+                                Palloti - Adopcia srdca
                             </h1>
                             <small>
-                                It is an application skeleton for a typical web app. You can use it to quickly bootstrap
-                                your webapp projects and dev environment for these projects.
+                                Administrácia rodičov, detí, prekladateľov, správ, projektov a požiadaviek.
                             </small>
                         </div>
                     </div>
@@ -131,11 +134,11 @@
 
         </div>
         <div class="footer">
-            <div class="pull-right">
+            {{--<div class="pull-right">
                 10GB of <strong>250GB</strong> Free.
-            </div>
+            </div>--}}
             <div>
-                <strong>Copyright</strong> Example Company &copy; 2014-2015
+                <strong>Pallotini</strong> {{ $current_year }}
             </div>
         </div>
 
