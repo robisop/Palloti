@@ -87,7 +87,6 @@
     </div>
     <div class="col-md-6">
 
-
         <!-- datum_odoslania Form Input -->
         <div class="form-group">
             {!! Form::label('datum_odoslania','Dátum odoslania:', ['class' => 'col-md-2 control-label']) !!}
@@ -145,6 +144,7 @@
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 {!! Form::submit($submitText, ['class' => 'btn btn-primary']) !!}
+                <a class="btn btn-default" href="{{ route('poziadavka.show', $poziadavka->id) }}">Späť bez uloženia</a>
             </div>
         </div>
 

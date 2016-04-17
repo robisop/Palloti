@@ -26,4 +26,9 @@ class Poziadavka extends Model {
     {
         return $this->belongsToMany('App\Subor', 'poziadavka_subor', 'id_poziadavka', 'id_subor' );
     }
+
+    public function dieta()
+    {
+        return $this->belongsTo('App\Dieta', 'id_dieta');
+    }
 }

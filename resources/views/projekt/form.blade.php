@@ -100,6 +100,7 @@
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 {!! Form::submit($submitText, ['class' => 'btn btn-primary']) !!}
+                <a class="btn btn-default" href="{{ route('projekt.show', $projekt->id) }}">Späť bez uloženia</a>
             </div>
         </div>
 
