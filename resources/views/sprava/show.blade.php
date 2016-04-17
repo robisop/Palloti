@@ -16,8 +16,8 @@
 
                     <!-- $sprava->datum_prijatia -->
                     <div class="form-group">
-                        <label class="col-md-2 control-label">Dátum prijatia:</label>
-                        <div class="col-md-10">
+                        <label class="col-md-4 control-label">Dátum prijatia:</label>
+                        <div class="col-md-8">
                             @if(isset($sprava->datum_prijatia))
                                 <p class="form-control-static">{{ $sprava->datum_prijatia->format('d.m.Y') }}</p>
                             @else
@@ -28,8 +28,8 @@
 
                     <!-- $sprava->datum_odoslania_prekladatelovi -->
                     <div class="form-group">
-                        <label class="col-md-2 control-label">Dátum odoslania prekladateľovi:</label>
-                        <div class="col-md-10">
+                        <label class="col-md-4 control-label">Dátum odoslania prekladateľovi:</label>
+                        <div class="col-md-8">
                             @if(isset($sprava->datum_odoslania_prekladatelovi))
                                 <p class="form-control-static">{{ $sprava->datum_odoslania_prekladatelovi->format('d.m.Y') }}</p>
                             @else
@@ -40,16 +40,16 @@
 
                     <!-- $sprava->typ->nazov -->
                     <div class="form-group">
-                        <label class="col-md-2 control-label">Typ:</label>
-                        <div class="col-md-10">
+                        <label class="col-md-4 control-label">Typ:</label>
+                        <div class="col-md-8">
                             <p class="form-control-static">{{ $sprava->typ->nazov }}</p>
                         </div>
                     </div>
 
                     <!-- $sprava->dieta->meno -->
                     <div class="form-group">
-                        <label class="col-md-2 control-label">Dieťa:</label>
-                        <div class="col-md-10">
+                        <label class="col-md-4 control-label">Dieťa:</label>
+                        <div class="col-md-8">
                             <p class="form-control-static">
                                 <a href="{{action('DietaController@show', [$sprava->id_dieta])}}">
                                     {{ $sprava->dieta->meno.' '.$sprava->dieta->priezvisko }}
@@ -60,8 +60,8 @@
 
                     <!-- $sprava->rodic->meno -->
                     <div class="form-group">
-                        <label class="col-md-2 control-label">Rodič:</label>
-                        <div class="col-md-10">
+                        <label class="col-md-4 control-label">Rodič:</label>
+                        <div class="col-md-8">
                             <p class="form-control-static">
                                 <a href="{{action('RodicController@show', [$sprava->id_rodic])}}">
                                     {{ $sprava->rodic->meno.' '.$sprava->rodic->priezvisko }}
@@ -72,8 +72,8 @@
 
                     <!-- $sprava->sposobDorucenia->nazov -->
                     <div class="form-group">
-                        <label class="col-md-2 control-label">Spôsob doručenia:</label>
-                        <div class="col-md-10">
+                        <label class="col-md-4 control-label">Spôsob doručenia:</label>
+                        <div class="col-md-8">
                             <p class="form-control-static">{{ $sprava->sposobDorucenia->nazov }}</p>
                         </div>
                     </div>
@@ -83,16 +83,16 @@
 
                     <!-- $sprava->jazyk->nazov -->
                     <div class="form-group">
-                        <label class="col-md-2 control-label">Jazyk:</label>
-                        <div class="col-md-10">
+                        <label class="col-md-4 control-label">Jazyk:</label>
+                        <div class="col-md-8">
                             <p class="form-control-static">{{ $sprava->jazyk->nazov }}</p>
                         </div>
                     </div>
 
                     <!-- $sprava->prekladatel->meno -->
                     <div class="form-group">
-                        <label class="col-md-2 control-label">Prekladateľ:</label>
-                        <div class="col-md-10">
+                        <label class="col-md-4 control-label">Prekladateľ:</label>
+                        <div class="col-md-8">
                             <p class="form-control-static">
                                 <a href="{{action('PrekladatelController@show', [$sprava->id_prekladatel])}}">
                                     {{ $sprava->prekladatel->meno.' '.$sprava->prekladatel->priezvisko }}
@@ -103,16 +103,16 @@
 
                     <!-- $sprava->stav->nazov -->
                     <div class="form-group">
-                        <label class="col-md-2 control-label">Stav:</label>
-                        <div class="col-md-10">
+                        <label class="col-md-4 control-label">Stav:</label>
+                        <div class="col-md-8">
                             <p class="form-control-static">{{ $sprava->stav->nazov }}</p>
                         </div>
                     </div>
 
                     <!-- $sprava->datum_nastavenia_stavu -->
                     <div class="form-group">
-                        <label class="col-md-2 control-label">Dátum nastavenia stavu:</label>
-                        <div class="col-md-10">
+                        <label class="col-md-4 control-label">Dátum nastavenia stavu:</label>
+                        <div class="col-md-8">
                             @if(isset($sprava->datum_nastavenia_stavu))
                                 <p class="form-control-static">{{ $sprava->datum_nastavenia_stavu->format('d.m.Y') }}</p>
                             @else
@@ -123,8 +123,8 @@
 
                     <!-- $sprava->poznamka -->
                     <div class="form-group">
-                        <label class="col-md-2 control-label">Poznámka:</label>
-                        <div class="col-md-10">
+                        <label class="col-md-4 control-label">Poznámka:</label>
+                        <div class="col-md-8">
                             <p class="form-control-static">{{ $sprava->poznamka }}</p>
                         </div>
                     </div>
