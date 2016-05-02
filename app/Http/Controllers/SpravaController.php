@@ -34,10 +34,15 @@ class SpravaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $filter)
     {
         $spravy = Sprava::with('typ','dieta', 'rodic', 'prekladatel', 'stav')->get();
-        return view('sprava.index', compact('spravy'));
+        $stavList = SpravaStav::all('id', 'nazov');
+        $typList = SpravaTyp::all('id', 'nazov');
+        $dietaList = Dieta::all('id', 'meno', 'priezvisko');
+        $rodicList = Rodic::all('id', 'meno', 'priezvisko');
+        $prekladatelList = Prekladatel::all('id', 'meno', 'priezvisko');
+        return view('sprava.index', compact('spravy', 'filter', 'stavList', 'typList', 'dietaList', 'rodicList', 'prekladatelList'));
     }
 
     /**
