@@ -30,10 +30,13 @@ class PoziadavkaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $filter)
     {
         $poziadavky = Poziadavka::with('typ', 'stav')->get();
-        return view('poziadavka.index', compact('poziadavky'));
+        $stavList = PoziadavkaStav::all('id', 'nazov');
+        $typList = PoziadavkaTyp::all('id', 'nazov');
+        $dietaList = Dieta::all('id', 'meno', 'priezvisko');
+        return view('poziadavka.index', compact('poziadavky', 'filter', 'stavList', 'typList', 'dietaList'));
     }
 
     /**
