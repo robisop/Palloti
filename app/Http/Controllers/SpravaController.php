@@ -28,16 +28,24 @@ class SpravaController extends Controller
     {
         $this->middleware('auth');
     }
-   
+
     /**
      * Display a listing of the resource.
      *
+     * @param Request $filter
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $filter)
     {
         $spravy = Sprava::with('typ','dieta', 'rodic', 'prekladatel', 'stav')->get();
-        return view('sprava.index', compact('spravy'));
+        $sposobDoruceniaList = SposobDorucenia::all('id', 'nazov');
+        $jazykList = Jazyk::all('id', 'nazov');
+        $stavList = SpravaStav::all('id', 'nazov');
+        $rodicList = Rodic::all('id', 'meno', 'priezvisko');
+        $dietaList = Dieta::all('id', 'meno', 'priezvisko');
+        $typList = SpravaTyp::all('id', 'nazov');
+        $prekladatelList = Prekladatel::all('id', 'meno', 'priezvisko');
+        return view('sprava.index', compact('spravy', 'filter', 'sposobDoruceniaList', 'jazykList', 'stavList', 'rodicList', 'dietaList', 'typList', 'prekladatelList'));
     }
 
     /**
