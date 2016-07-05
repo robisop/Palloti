@@ -32,10 +32,37 @@ class ProjektController extends Controller
      */
     public function index(Request $filter)
     {
-        $projekty = Projekt::with('stav')->get();
+        $query = Projekt::with('stav');
+        $this->applyFilter($filter, $query);
+        $projekty = $query->get();
         $stavList = ProjektStav::all('id', 'nazov');
         $dietaList = Dieta::all('id', 'meno', 'priezvisko');
         return view('projekt.index', compact('projekty', 'filter', 'stavList', 'dietaList'));
+    }
+
+    private function applyFilter($filter, $query)
+    {
+        if($filter->nazov){
+            $query = $query->where('nazov', 'like', $filter->nazov.'%');
+        }
+
+        if($filter->id_dieta){
+            $query = $query->where('id_dieta', $filter->id_dieta);
+        }
+
+        if($filter->id_stav){
+            $query = $query->where('id_projekt_stav', $filter->id_stav);
+        }
+
+        if($filter->konecna_suma_od){
+            $query = $query->where('konecna_suma', '>=', $filter->konecna_suma_od);
+        }
+
+        if($filter->konecna_suma_do){
+            $query = $query->where('konecna_suma', '<=', $filter->konecna_suma_do);
+        }
+
+        return $query;
     }
 
     /**
