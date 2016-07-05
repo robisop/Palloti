@@ -35,10 +35,31 @@ class PrekladatelController extends Controller
      */
     public function index(Request $filter)
     {
-        $prekladatelia = Prekladatel::with('jazyk','stav')->get();
+        $query = Prekladatel::with('jazyk','stav');
+        $this->applyFilter($filter, $query);
+        $prekladatelia = $query->get();
         $jazykList = Jazyk::all('id', 'nazov');
         $stavList = PrekladatelStav::all('id', 'nazov');
         return view('prekladatel.index', compact('prekladatelia', 'filter', 'stavList', 'jazykList'));
+    }
+
+    private function applyFilter($filter, $query)
+    {
+        if($filter->meno){
+            $query = $query->where('meno', 'like', $filter->meno.'%')->orWhere('priezvisko', 'like', $filter->meno.'%');
+        }
+
+        if($filter->id_stav){
+            $query = $query->where('id_prekladatel_stav', $filter->id_stav);
+        }
+
+        if($filter->id_jazyk){
+            $query = $query->whereHas('jazyk', function($q) use($filter) {
+                $q->where('id', $filter->id_jazyk);
+            });
+        }
+
+        return $query;
     }
 
     /**

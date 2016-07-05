@@ -50,7 +50,10 @@ class RodicController extends Controller
     private function applyFilter($filter, $query)
     {
         if($filter->meno){
-            $query = $query->where('meno', 'like', $filter->meno.'%')->orWhere('priezvisko', 'like', $filter->meno.'%');
+            $query = $query
+                ->where('meno', 'like', $filter->meno.'%')
+                ->orWhere('priezvisko', 'like', $filter->meno.'%')
+                ->orWhere('nazov_spolocnosti', 'like', $filter->meno.'%');
         }
 
         if($filter->id_rodic_stav){

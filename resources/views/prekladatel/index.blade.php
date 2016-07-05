@@ -38,22 +38,22 @@
                                     </div>
                                 </div>
 
-                                <!-- id_prekladatel_stav Form Input -->
+                                <!-- id_stav Form Input -->
                                 <div class="form-group">
-                                    {!! Form::label('id_prekladatel_stav','Stav:', ['class' => 'col-md-4 control-label']) !!}
+                                    {!! Form::label('id_stav','Stav:', ['class' => 'col-md-4 control-label']) !!}
                                     <div class="col-md-8">
-                                        <select name="id_prekladatel_stav" class="form-control select2">
+                                        <select name="id_stav" class="form-control select2">
                                             <option value=""></option>
                                             @foreach($stavList as $item)
-                                                @if($filter->id_prekladatel_stav == $item->id)
+                                                @if($filter->id_stav == $item->id)
                                                     <option value="{{$item->id}}" selected="selected">{{$item->nazov}}</option>
                                                 @else
                                                     <option value="{{$item->id}}">{{$item->nazov}}</option>
                                                 @endif
                                             @endforeach
                                         </select>
-                                        @if($errors->has('id_prekladatel_stav'))
-                                            <span class="help-block m-b-none">{{ $errors->first('id_prekladatel_stav') }}</span>
+                                        @if($errors->has('id_stav'))
+                                            <span class="help-block m-b-none">{{ $errors->first('id_stav') }}</span>
                                         @endif
                                     </div>
                                 </div>
