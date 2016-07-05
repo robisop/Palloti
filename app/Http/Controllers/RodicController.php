@@ -40,8 +40,6 @@ class RodicController extends Controller
      */
     public function index(Request $filter)
     {
-        //$rodicia = Rodic::with('stav')->get();
-        //$query = DB::table('rodic')->leftJoin('rodic_stav', 'rodic.id_rodic_stav', '=', 'rodic_stav.id');
         $query = Rodic::with('stav');
         $this->applyFilter($filter, $query);
         $rodicia = $query->get();

@@ -37,11 +37,57 @@ class DietaController extends Controller
      */
     public function index(Request $filter)
     {
-        $deti = Dieta::with('misia.krajina', 'stav', 'rodic')->get();
+        $query = Dieta::with('misia.krajina', 'stav', 'rodic');
+        $this->applyFilter($filter, $query);
+        $deti = $query->get();
         $stavList = DietaStav::all('id', 'nazov');
         $krajinaList = Krajina::all('id', 'nazov');
         $misiaList = Misia::all('id', 'nazov', 'id_krajina');
         return view('dieta.index', compact('deti', 'filter', 'stavList', 'krajinaList', 'misiaList'));
+    }
+
+    private function applyFilter($filter, $query)
+    {
+        if($filter->meno){
+            $query = $query->where('meno', 'like', $filter->meno.'%')->orWhere('priezvisko', 'like', $filter->meno.'%');
+        }
+
+        if($filter->id){
+            $query = $query->where('id', $filter->id);
+        }
+
+        if($filter->rok_narodenia){
+            $query = $query->where('rok_narodenia', $filter->rok_narodenia);
+        }
+
+        if($filter->id_dieta_stav){
+            $query = $query->where('id_dieta_stav', $filter->id_dieta_stav);
+        }
+
+        if($filter->id_krajina){
+            $query = $query->whereHas('misia', function($q) use($filter) {
+                $q->where('id_krajina', $filter->id_krajina);
+            });
+        }
+
+        if($filter->id_misia){
+            $query = $query->where('id_misia', $filter->id_misia);
+        }
+
+        if($filter->vs){
+            $query = $query->whereHas('rodic', function($q) use($filter) {
+                $q->where('vs', $filter->vs);
+            });
+        }
+
+        if($filter->as){
+            $query = $query->whereHas('rodic', function($q) use($filter) {
+                $q->where('id', $filter->as);
+            });
+        }
+        
+
+        return $query;
     }
 
     /**
