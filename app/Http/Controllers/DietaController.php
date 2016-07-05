@@ -42,7 +42,9 @@ class DietaController extends Controller
         $deti = $query->get();
         $stavList = DietaStav::all('id', 'nazov');
         $krajinaList = Krajina::all('id', 'nazov');
-        $misiaList = Misia::all('id', 'nazov', 'id_krajina');
+        $misiaList = $filter->id_krajina
+            ? Misia::where('id_krajina', $filter->id_krajina)->select('id', 'nazov', 'id_krajina')->get()
+            :  Misia::all('id', 'nazov', 'id_krajina');
         return view('dieta.index', compact('deti', 'filter', 'stavList', 'krajinaList', 'misiaList'));
     }
 
@@ -85,7 +87,7 @@ class DietaController extends Controller
                 $q->where('id', $filter->as);
             });
         }
-        
+
 
         return $query;
     }
