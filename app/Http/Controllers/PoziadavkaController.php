@@ -24,19 +24,43 @@ class PoziadavkaController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     /**
      * Display a listing of the resource.
      *
+     * @param Request $filter
      * @return \Illuminate\Http\Response
      */
     public function index(Request $filter)
     {
-        $poziadavky = Poziadavka::with('typ', 'stav')->get();
+        $query = Poziadavka::with('typ', 'stav');
+        $this->applyFilter($filter, $query);
+        $poziadavky = $query->get();
         $stavList = PoziadavkaStav::all('id', 'nazov');
         $typList = PoziadavkaTyp::all('id', 'nazov');
         $dietaList = Dieta::all('id', 'meno', 'priezvisko');
         return view('poziadavka.index', compact('poziadavky', 'filter', 'stavList', 'typList', 'dietaList'));
+    }
+
+    private function applyFilter($filter, $query)
+    {
+        if($filter->nazov){
+            $query = $query->where('nazov', 'like', $filter->nazov.'%');
+        }
+
+        if($filter->id_dieta){
+            $query = $query->where('id_dieta', $filter->id_dieta);
+        }
+
+        if($filter->id_stav){
+            $query = $query->where('id_poziadavka_stav', $filter->id_stav);
+        }
+
+        if($filter->id_typ){
+            $query = $query->where('id_poziadavka_typ', $filter->id_typ);
+        }
+
+        return $query;
     }
 
     /**
