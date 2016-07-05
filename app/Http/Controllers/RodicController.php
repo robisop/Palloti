@@ -40,10 +40,36 @@ class RodicController extends Controller
      */
     public function index(Request $filter)
     {
-        $rodicia = Rodic::with('stav')->get();
+        //$rodicia = Rodic::with('stav')->get();
+        //$query = DB::table('rodic')->leftJoin('rodic_stav', 'rodic.id_rodic_stav', '=', 'rodic_stav.id');
+        $query = Rodic::with('stav');
+        $this->applyFilter($filter, $query);
+        $rodicia = $query->get();
         $rodicStavList = RodicStav::all('id', 'nazov');
         return view('rodic.index', compact('rodicia', 'rodicStavList', 'filter'));
     }
+
+    private function applyFilter($filter, $query)
+    {
+        if($filter->meno){
+            $query = $query->where('meno', 'like', $filter->meno.'%')->orWhere('priezvisko', 'like', $filter->meno.'%');
+        }
+
+        if($filter->id_rodic_stav){
+            $query = $query->where('id_rodic_stav', $filter->id_rodic_stav);
+        }
+
+        if($filter->vs){
+            $query = $query->where('vs', 'like', $filter->vs.'%');
+        }
+
+        if($filter->as){
+            $query = $query->where('id', $filter->as);
+        }
+
+        return $query;
+    }
+
 
     /**
      * Show the form for creating a new resource.
