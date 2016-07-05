@@ -38,6 +38,7 @@ class SpravaController extends Controller
     public function index(Request $filter)
     {
         $spravy = Sprava::with('typ','dieta', 'rodic', 'prekladatel', 'stav')->get();
+<<<<<<< HEAD
         $sposobDoruceniaList = SposobDorucenia::all('id', 'nazov');
         $jazykList = Jazyk::all('id', 'nazov');
         $stavList = SpravaStav::all('id', 'nazov');
@@ -46,6 +47,14 @@ class SpravaController extends Controller
         $typList = SpravaTyp::all('id', 'nazov');
         $prekladatelList = Prekladatel::all('id', 'meno', 'priezvisko');
         return view('sprava.index', compact('spravy', 'filter', 'sposobDoruceniaList', 'jazykList', 'stavList', 'rodicList', 'dietaList', 'typList', 'prekladatelList'));
+=======
+        $stavList = SpravaStav::all('id', 'nazov');
+        $typList = SpravaTyp::all('id', 'nazov');
+        $dietaList = Dieta::all('id', 'meno', 'priezvisko');
+        $rodicList = Rodic::all('id', 'meno', 'priezvisko');
+        $prekladatelList = Prekladatel::all('id', 'meno', 'priezvisko');
+        return view('sprava.index', compact('spravy', 'filter', 'stavList', 'typList', 'dietaList', 'rodicList', 'prekladatelList'));
+>>>>>>> origin/master
     }
 
     /**

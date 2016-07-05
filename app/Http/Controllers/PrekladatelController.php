@@ -26,10 +26,11 @@ class PrekladatelController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     /**
      * Display a listing of the resource.
      *
+     * @param Request $filter
      * @return \Illuminate\Http\Response
      */
     public function index(Request $filter)
