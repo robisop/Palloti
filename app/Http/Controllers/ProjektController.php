@@ -23,16 +23,19 @@ class ProjektController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     /**
      * Display a listing of the resource.
      *
+     * @param Request $filter
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $filter)
     {
         $projekty = Projekt::with('stav')->get();
-        return view('projekt.index', compact('projekty'));
+        $stavList = ProjektStav::all('id', 'nazov');
+        $dietaList = Dieta::all('id', 'meno', 'priezvisko');
+        return view('projekt.index', compact('projekty', 'filter', 'stavList', 'dietaList'));
     }
 
     /**
