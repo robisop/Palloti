@@ -37,7 +37,9 @@ class SpravaController extends Controller
      */
     public function index(Request $filter)
     {
-        $spravy = Sprava::with('typ','dieta', 'rodic', 'prekladatel', 'stav')->get();
+        $query = Sprava::with('typ','dieta', 'rodic', 'prekladatel', 'stav');
+        $this->applyFilter($filter, $query);
+        $spravy = $query->get();
         $sposobDoruceniaList = SposobDorucenia::all('id', 'nazov');
         $jazykList = Jazyk::all('id', 'nazov');
         $stavList = SpravaStav::all('id', 'nazov');
@@ -46,6 +48,39 @@ class SpravaController extends Controller
         $typList = SpravaTyp::all('id', 'nazov');
         $prekladatelList = Prekladatel::all('id', 'meno', 'priezvisko');
         return view('sprava.index', compact('spravy', 'filter', 'sposobDoruceniaList', 'jazykList', 'stavList', 'rodicList', 'dietaList', 'typList', 'prekladatelList'));
+    }
+
+    private function applyFilter($filter, $query)
+    {
+        if($filter->id_typ){
+            $query = $query->where('id_sprava_typ', $filter->id_typ);
+        }
+
+        if($filter->id_dieta){
+            $query = $query->where('id_dieta', $filter->id_dieta);
+        }
+
+        if($filter->id_rodic){
+            $query = $query->where('id_rodic', $filter->id_rodic);
+        }
+
+        if($filter->id_prekladatel){
+            $query = $query->where('id_prekladatel', $filter->id_prekladatel);
+        }
+
+        if($filter->id_stav){
+            $query = $query->where('id_sprava_stav', $filter->id_stav);
+        }
+
+        if($filter->id_jazyk){
+            $query = $query->where('id_jazyk', $filter->id_jazyk);
+        }
+
+        if($filter->id_sposob_dorucenia){
+            $query = $query->where('id_sposob_dorucenia', $filter->id_sposob_dorucenia);
+        }
+
+        return $query;
     }
 
     /**
