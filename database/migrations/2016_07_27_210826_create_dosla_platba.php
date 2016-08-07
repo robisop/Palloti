@@ -43,5 +43,6 @@ class CreateDoslaPlatba extends Migration
     public function down()
     {
         Schema::drop('dosla_platba');
+        Schema::drop('dosla_platba_stav');
     }
 }
