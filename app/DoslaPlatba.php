@@ -8,7 +8,7 @@ class DoslaPlatba extends Model {
 
     protected $table = 'dosla_platba';
 
-    protected $guarded  = ['id'];
+    protected $guarded  = ['id', 'datum_platby', 'datum_spracovania'];
 
     protected $dates = ['created_at', 'updated_at', 'datum_platby', 'datum_spracovania'];
 

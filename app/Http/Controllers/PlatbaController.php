@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\DoslaPlatba;
 use App\DoslaPlatbaStav;
 use App\Http\Requests\PlatbaRequest;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -84,9 +85,27 @@ class PlatbaController extends Controller
     public function store(PlatbaRequest $request)
     {
         $platba = DoslaPlatba::create($request->all());
+        $this->setPlatba($request, $platba);
         $platba->save();
         Flash::success('platba '.$platba->nazov.' bola zapisana');
         return redirect('platba');
+    }
+
+    private function setPlatba(PlatbaRequest $request, DoslaPlatba $platba)
+    {
+        $platba->datum_platby = $this->setDateField($request->datum_platby);
+        $platba->datum_spracovania = $this->setDateField($request->datum_spracovania);
+    }
+
+    private function setDateField($requestField)
+    {
+        $modelField = null;
+        if($requestField != null){
+            $modelField = Carbon::createFromFormat('d.m.Y', $requestField);
+        } else {
+            $modelField = null;
+        }
+        return $modelField;
     }
 
     /**
@@ -125,6 +144,7 @@ class PlatbaController extends Controller
     {
         $platba = DoslaPlatba::findOrFail($id);
         $platba->update($request->all());
+        $this->setPlatba($request, $platba);
         $platba->save();
         Flash::success('platba '.$platba->nazov.' bola upravena');
         return redirect()->route('platba.show', $platba->id);

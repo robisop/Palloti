@@ -10,7 +10,7 @@
             <div class="ibox">
                 <div class="ibox-content">
 
-                    <h2>Došlá platba - {{ $poziadavka->nazov }}</h2>
+                    <h2>Došlá platba - {{ $platba->nazov }}</h2>
 
                     <p>
                         Editácia došlej platby

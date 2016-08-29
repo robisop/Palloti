@@ -85,11 +85,11 @@
                                     <tbody>
                                     @forelse($platby as $platba)
                                         <tr>
-                                            <td><a href="{{ route('poziadavka.show', $platba->id) }}" class="client-link">{{ $platba->nazov }}</a></td>
-                                            <td class="client-status"><span class="label label-danger">{{ $platba->stav->nazov }}</span></td>
+                                            <td><a href="{{ route('platba.show', $platba->id) }}" class="client-link">{{ $platba->nazov }}</a></td>
+                                            {{--<td class="client-status"><span class="label label-danger">{{ $platba->stav->nazov }}</span></td>--}}
                                             <td>
-                                                <a href="{{ route('poziadavka.show', $platba->id) }}" class="btn btn-sm btn-success">detail</a>
-                                                <a href="{{ route('poziadavka.edit', $platba->id) }}" class="btn btn-sm btn-primary">upraviť</a>
+                                                <a href="{{ route('platba.show', $platba->id) }}" class="btn btn-sm btn-success">detail</a>
+                                                <a href="{{ route('platba.edit', $platba->id) }}" class="btn btn-sm btn-primary">upraviť</a>
                                             </td>
                                         </tr>
                                     @empty
