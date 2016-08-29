@@ -34,23 +34,6 @@ class CreateDoslaPlatba extends Migration
             $table->foreign('id_dosla_platba_stav')->references('id')->on('dosla_platba_stav');
         });
 
-        Schema::create('priradena_platba', function (Blueprint $table) {
-            $table->increments('id');
-            $table->unsignedInteger('id_dosla_platba')->nullable();
-            $table->decimal('suma', 10, 2);
-            $table->text('poznamka')->nullable();
-            $table->date('datum_priradenia');
-            $table->unsignedInteger('id_rodic')->nullable();
-            $table->unsignedInteger('id_dieta')->nullable();
-            $table->unsignedInteger('id_projekt')->nullable();
-            $table->timestamps();
-
-            $table->foreign('id_dosla_platba')->references('id')->on('dosla_platba');
-            $table->foreign('id_rodic')->references('id')->on('rodic');
-            $table->foreign('id_dieta')->references('id')->on('dieta');
-            $table->foreign('id_projekt')->references('id')->on('projekt');
-        });
-
         Schema::create('ocakavana_platba_typ', function (Blueprint $table) {
             $table->unsignedTinyInteger('id', true);
             $table->string('nazov');
@@ -61,13 +44,20 @@ class CreateDoslaPlatba extends Migration
             $table->increments('id');
             $table->decimal('suma', 10, 2);
             $table->unsignedTinyInteger('id_ocakavana_platba_typ')->nullable();
-            $table->unsignedInteger('id_priradena_platba')->nullable();
-            $table->text('poznamka')->nullable();
             $table->date('datum_ocakavanej_platby');
+            $table->unsignedInteger('id_rodic')->nullable();
+            $table->unsignedInteger('id_dieta')->nullable();
+            $table->unsignedInteger('id_projekt')->nullable();
+            $table->unsignedInteger('id_dosla_platba')->nullable();
+            $table->date('datum_priradenia');
+            $table->text('poznamka')->nullable();
             $table->timestamps();
 
             $table->foreign('id_ocakavana_platba_typ')->references('id')->on('ocakavana_platba_typ');
-            $table->foreign('id_priradena_platba')->references('id')->on('priradena_platba');
+            $table->foreign('id_rodic')->references('id')->on('rodic');
+            $table->foreign('id_dieta')->references('id')->on('dieta');
+            $table->foreign('id_projekt')->references('id')->on('projekt');
+            $table->foreign('id_dosla_platba')->references('id')->on('dosla_platba');
         });
     }
 
@@ -78,12 +68,10 @@ class CreateDoslaPlatba extends Migration
      */
     public function down()
     {
-        Schema::drop('dosla_platba');
-        Schema::drop('dosla_platba_stav');
-
-        Schema::drop('priradena_platba');
-
         Schema::drop('ocakavana_platba');
         Schema::drop('ocakavana_platba_typ');
+
+        Schema::drop('dosla_platba');
+        Schema::drop('dosla_platba_stav');
     }
 }
