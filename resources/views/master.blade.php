@@ -89,6 +89,10 @@
                         <a href="{{ route('platba.index') }}"><i class="fa fa-camera"></i> <span
                                     class="nav-label">Platby</span> </a>
                     </li>
+                    <li>
+                        <a href="{{ route('ocakavanaplatba.index') }}"><i class="fa fa-camera"></i> <span
+                                    class="nav-label">Očakávané platby</span> </a>
+                    </li>
                 </ul>
 
             </div>

@@ -36,3 +36,4 @@ Route::resource('projekt', 'ProjektController');
 Route::resource('poziadavka', 'PoziadavkaController');
 Route::resource('sprava', 'SpravaController');
 Route::resource('platba', 'PlatbaController');
+Route::resource('ocakavanaplatba', 'OcakavanaPlatbaController');
