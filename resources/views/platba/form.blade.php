@@ -49,17 +49,16 @@
             </div>
         </div>
 
-        <!-- poznamka Form Input -->
+        <!-- poznamka_pre_prijemcu Form Input -->
         <div class="form-group">
-            {!! Form::label('poznamka','Poznámka pre príjemcu:', ['class' => 'col-md-4 control-label']) !!}
+            {!! Form::label('poznamka_pre_prijemcu','Poznámka pre príjemcu:', ['class' => 'col-md-4 control-label']) !!}
             <div class="col-md-8">
-                {!! Form::textarea('poznamka', null, ['class' => 'form-control', 'cols' => 50, 'rows' => 10]) !!}
-                @if($errors->has('poznamka'))
-                    <span class="help-block m-b-none">{{ $errors->first('poznamka') }}</span>
+                {!! Form::textarea('poznamka_pre_prijemcu', null, ['class' => 'form-control', 'cols' => 50, 'rows' => 10]) !!}
+                @if($errors->has('poznamka_pre_prijemcu'))
+                    <span class="help-block m-b-none">{{ $errors->first('poznamka_pre_prijemcu') }}</span>
                 @endif
             </div>
         </div>
-
 
 
     </div>
@@ -83,9 +82,9 @@
                 <div class="input-group date">
                     <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                     @if(isset($platba->datum_platby))
-                        <input type="date" name="datum_platby" value="{{$platba->datum_platby->format('d.m.Y')}}" class="form-control">
+                        <input type="text" name="datum_platby" value="{{$platba->datum_platby->format('d.m.Y')}}" class="form-control">
                     @else
-                        <input type="date" name="datum_platby" class="form-control">
+                        <input type="text" name="datum_platby" class="form-control">
                     @endif
                 </div>
                 @if($errors->has('datum_platby'))
@@ -101,9 +100,9 @@
                 <div class="input-group date">
                     <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                     @if(isset($platba->datum_spracovania))
-                        <input type="date" name="datum_spracovania" value="{{$platba->datum_spracovania->format('d.m.Y')}}" class="form-control">
+                        <input type="text" name="datum_spracovania" value="{{$platba->datum_spracovania->format('d.m.Y')}}" class="form-control">
                     @else
-                        <input type="date" name="datum_spracovania" class="form-control">
+                        <input type="text" name="datum_spracovania" class="form-control">
                     @endif
                 </div>
                 @if($errors->has('datum_spracovania'))

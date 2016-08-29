@@ -13,9 +13,9 @@
                 <div class="input-group date">
                     <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                     @if(isset($sprava->datum_prijatia))
-                        <input type="date" name="datum_prijatia" value="{{$sprava->datum_prijatia->format('d.m.Y')}}" class="form-control">
+                        <input type="text" name="datum_prijatia" value="{{$sprava->datum_prijatia->format('d.m.Y')}}" class="form-control">
                     @else
-                        <input type="date" name="datum_prijatia" class="form-control">
+                        <input type="text" name="datum_prijatia" class="form-control">
                     @endif
                 </div>
                 @if($errors->has('datum_prijatia'))
@@ -31,9 +31,9 @@
                 <div class="input-group date">
                     <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                     @if(isset($sprava->datum_odoslania_prekladatelovi))
-                        <input type="date" name="datum_odoslania_prekladatelovi" value="{{$sprava->datum_odoslania_prekladatelovi->format('d.m.Y')}}" class="form-control">
+                        <input type="text" name="datum_odoslania_prekladatelovi" value="{{$sprava->datum_odoslania_prekladatelovi->format('d.m.Y')}}" class="form-control">
                     @else
-                        <input type="date" name="datum_odoslania_prekladatelovi" class="form-control">
+                        <input type="text" name="datum_odoslania_prekladatelovi" class="form-control">
                     @endif
                 </div>
                 @if($errors->has('datum_odoslania_prekladatelovi'))
@@ -185,9 +185,9 @@
                 <div class="input-group date">
                     <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                     @if(isset($sprava->datum_nastavenia_stavu))
-                        <input type="date" name="datum_nastavenia_stavu" value="{{$sprava->datum_nastavenia_stavu->format('d.m.Y')}}" class="form-control">
+                        <input type="text" name="datum_nastavenia_stavu" value="{{$sprava->datum_nastavenia_stavu->format('d.m.Y')}}" class="form-control">
                     @else
-                        <input type="date" name="datum_nastavenia_stavu" class="form-control">
+                        <input type="text" name="datum_nastavenia_stavu" class="form-control">
                     @endif
                 </div>
                 @if($errors->has('datum_nastavenia_stavu'))

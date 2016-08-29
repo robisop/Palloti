@@ -280,9 +280,9 @@
                 <div class="input-group date">
                     <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                     @if(isset($rodic->datum_podpisu_zmluvy))
-                        <input type="date" name="datum_podpisu_zmluvy" value="{{$rodic->datum_podpisu_zmluvy->format('d.m.Y')}}" class="form-control">
+                        <input type="text" name="datum_podpisu_zmluvy" value="{{$rodic->datum_podpisu_zmluvy->format('d.m.Y')}}" class="form-control">
                     @else
-                        <input type="date" name="datum_podpisu_zmluvy" class="form-control">
+                        <input type="text" name="datum_podpisu_zmluvy" class="form-control">
                     @endif
                 </div>
                 @if($errors->has('datum_podpisu_zmluvy'))
@@ -298,9 +298,9 @@
                 <div class="input-group date">
                     <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                     @if(isset($rodic->datum_ukoncenia_zmluvy))
-                        <input type="date" name="datum_ukoncenia_zmluvy" value="{{$rodic->datum_ukoncenia_zmluvy->format('d.m.Y')}}" class="form-control">
+                        <input type="text" name="datum_ukoncenia_zmluvy" value="{{$rodic->datum_ukoncenia_zmluvy->format('d.m.Y')}}" class="form-control">
                     @else
-                        <input type="date" name="datum_ukoncenia_zmluvy" class="form-control">
+                        <input type="text" name="datum_ukoncenia_zmluvy" class="form-control">
                     @endif
                 </div>
                 @if($errors->has('datum_ukoncenia_zmluvy'))

@@ -56,9 +56,9 @@
                 <div class="input-group date">
                     <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                     @if(isset($dieta->datum_narodenia))
-                        <input type="date" name="datum_narodenia" value="{{$dieta->datum_narodenia->format('d.m.Y')}}" class="form-control">
+                        <input type="text" name="datum_narodenia" value="{{$dieta->datum_narodenia->format('d.m.Y')}}" class="form-control">
                     @else
-                        <input type="date" name="datum_narodenia" class="form-control">
+                        <input type="text" name="datum_narodenia" class="form-control">
                     @endif
                 </div>
                 @if($errors->has('datum_narodenia'))
@@ -123,9 +123,9 @@
                 <div class="input-group date">
                     <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                     @if(isset($dieta->skola_datum_nastavenia))
-                        <input type="date" name="skola_datum_nastavenia" value="{{$dieta->skola_datum_nastavenia->format('d.m.Y')}}" class="form-control">
+                        <input type="text" name="skola_datum_nastavenia" value="{{$dieta->skola_datum_nastavenia->format('d.m.Y')}}" class="form-control">
                     @else
-                        <input type="date" name="skola_datum_nastavenia" class="form-control">
+                        <input type="text" name="skola_datum_nastavenia" class="form-control">
                     @endif
                 </div>
                 @if($errors->has('skola_datum_nastavenia'))
@@ -249,9 +249,9 @@
                 <div class="input-group date">
                     <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                     @if(isset($dieta->datum_narodenia))
-                        <input type="date" name="datum_pozastavene_do" value="{{$dieta->datum_pozastavene_do->format('d.m.Y')}}" class="form-control">
+                        <input type="text" name="datum_pozastavene_do" value="{{$dieta->datum_pozastavene_do->format('d.m.Y')}}" class="form-control">
                     @else
-                        <input type="date" name="datum_pozastavene_do" class="form-control">
+                        <input type="text" name="datum_pozastavene_do" class="form-control">
                     @endif
                 </div>
                 @if($errors->has('datum_pozastavene_do'))

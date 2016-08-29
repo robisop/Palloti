@@ -94,9 +94,9 @@
                 <div class="input-group date">
                     <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                     @if(isset($poziadavka->datum_odoslania))
-                        <input type="date" name="datum_odoslania" value="{{$poziadavka->datum_odoslania->format('d.m.Y')}}" class="form-control">
+                        <input type="text" name="datum_odoslania" value="{{$poziadavka->datum_odoslania->format('d.m.Y')}}" class="form-control">
                     @else
-                        <input type="date" name="datum_odoslania" class="form-control">
+                        <input type="text" name="datum_odoslania" class="form-control">
                     @endif
                 </div>
                 @if($errors->has('datum_odoslania'))
@@ -112,9 +112,9 @@
                 <div class="input-group date">
                     <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                     @if(isset($poziadavka->datum_prijatia_odpovede))
-                        <input type="date" name="datum_prijatia_odpovede" value="{{$poziadavka->datum_prijatia_odpovede->format('d.m.Y')}}" class="form-control">
+                        <input type="text" name="datum_prijatia_odpovede" value="{{$poziadavka->datum_prijatia_odpovede->format('d.m.Y')}}" class="form-control">
                     @else
-                        <input type="date" name="datum_prijatia_odpovede" class="form-control">
+                        <input type="text" name="datum_prijatia_odpovede" class="form-control">
                     @endif
                 </div>
                 @if($errors->has('datum_prijatia_odpovede'))
