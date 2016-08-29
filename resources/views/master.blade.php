@@ -85,6 +85,10 @@
                         <a href="{{ route('poziadavka.index') }}"><i class="fa fa-camera"></i> <span
                                     class="nav-label">Požiadavky</span> </a>
                     </li>
+                    <li>
+                        <a href="{{ route('platba.index') }}"><i class="fa fa-camera"></i> <span
+                                    class="nav-label">Platby</span> </a>
+                    </li>
                 </ul>
 
             </div>

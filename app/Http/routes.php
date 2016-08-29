@@ -35,3 +35,4 @@ Route::resource('prekladatel', 'PrekladatelController');
 Route::resource('projekt', 'ProjektController');
 Route::resource('poziadavka', 'PoziadavkaController');
 Route::resource('sprava', 'SpravaController');
+Route::resource('platba', 'PlatbaController');
